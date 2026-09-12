@@ -240,6 +240,27 @@ main { display: block; }
 .hero-copy { flex: 1 1 460px; }
 .hero .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 40em; }
 
+.hero-portrait {
+	position: relative;
+	flex: 0 1 300px;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+.hero-portrait::before {
+	content: "";
+	position: absolute;
+	inset: 6% 10%;
+	background: var(--sage);
+	border-radius: 42% 58% 63% 37% / 45% 41% 59% 55%;
+}
+.hero-portrait img {
+	position: relative;
+	width: 260px;
+	max-width: 100%;
+	filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.22));
+}
+
 .hero-ctas {
 	display: flex;
 	align-items: center;
