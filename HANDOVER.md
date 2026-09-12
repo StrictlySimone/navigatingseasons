@@ -11,16 +11,12 @@ update my fees." Claude Code can read this file directly and act on it.
 
 ## What's live right now
 
-The site is finished and published. The current address is:
+The site is finished and published at:
 
-**https://strictlysimone.github.io/navigatingseasons/**
+**https://navigatingseasons.co.uk**
 
-(Simone: confirm this is still the exact live URL before sending to Fran —
-it depends on the GitHub Pages settings on the repo, which I can't verify
-from here.)
-
-It is not yet reachable at navigatingseasons.co.uk itself — that needs the
-domain's DNS pointed at GitHub, covered under "Still outstanding" below.
+You're a collaborator on the GitHub repository, so you (and your own
+Claude Code) can push changes directly — no need to go through Simone.
 
 ## What's on the site
 
@@ -82,25 +78,10 @@ Simone to sanity-check) before publishing.
 
 ## Still outstanding
 
-1. **Custom domain (navigatingseasons.co.uk).** The site currently lives at
-   the GitHub address above, not your own domain. To connect them:
-   - Add a file named `CNAME` to the repository containing just
-     `navigatingseasons.co.uk`.
-   - At your domain registrar, point the domain at GitHub Pages: four `A`
-     records (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
-     `185.199.111.153`) for the bare domain, and a `CNAME` record for `www`
-     pointing at `strictlysimone.github.io`.
-   - Once that's propagated, tick "Enforce HTTPS" in the repository's
-     GitHub Pages settings.
-   - Claude Code can talk you through this, but the DNS change itself
-     happens on your domain registrar's own site, not in this repo.
-2. **`assets/images/card.jpg`** — one small image referenced for how the
-   site previews when shared as a link (e.g. in a text message or on
-   Facebook). Cosmetic only; the site works fully without it.
-3. **Who owns the repository.** It currently sits under Simone's GitHub
-   account for convenience. Whenever you're ready, it can be transferred
-   to your own account, or you can simply be added as a collaborator on
-   it — either works with Claude Code.
+Just one small thing: **`assets/images/card.jpg`** is referenced for how
+the site previews when shared as a link (e.g. in a text message or on
+Facebook), but doesn't exist yet. Cosmetic only — the site works fully
+without it.
 
 ## If something looks broken
 
