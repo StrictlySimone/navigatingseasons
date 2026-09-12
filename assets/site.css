@@ -461,3 +461,13 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 .footer-links a.crisis { color: var(--accent-strong); font-weight: 700; }
 html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
 .footer-links a:hover { color: var(--ink); }
+
+.site-credit {
+	text-align: center;
+	font-size: 0.72rem;
+	color: var(--ink-soft);
+	opacity: 0.75;
+	margin-top: 16px;
+}
+.site-credit a { color: var(--ink-soft); }
+.site-credit a:hover { color: var(--ink); }
