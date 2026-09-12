@@ -18,6 +18,10 @@
 			toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
 			toggle.textContent = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
 		}
+		var themeColor = document.getElementById("theme-color-meta");
+		if (themeColor) {
+			themeColor.setAttribute("content", theme === "dark" ? "#171D14" : "#6C7C59");
+		}
 	}
 
 	function initialTheme() {
@@ -27,11 +31,11 @@
 				return saved;
 			}
 		} catch (e) {
-			/* localStorage unavailable — fall through to system preference */
+			/* localStorage unavailable — fall through to default */
 		}
-		return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-			? "dark"
-			: "light";
+		// Defaults to dark regardless of OS preference; visitors can still
+		// switch to light mode with the toggle, which is then remembered.
+		return "dark";
 	}
 
 	// Apply the theme immediately (before DOMContentLoaded) to avoid a
