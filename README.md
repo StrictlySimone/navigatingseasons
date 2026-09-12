@@ -18,6 +18,8 @@ crisis-support.html       24/7 crisis contacts
 privacy-policy.html       UK GDPR privacy policy
 contact.html              Contact form + FAQ
 thank-you.html            Form submission landing page
+404.html                  Custom "page not found" page
+HANDOVER.md               Plain-language handover doc for Fran (read this first)
 assets/
   site.css                All styling: tokens, type, layout, components
   site.js                 Theme toggle + footer year
@@ -81,20 +83,26 @@ an override in `localStorage` (`ns-theme`) and applies via an inline
 
 ## Still open
 
+See `HANDOVER.md` for the version of this written for Fran. Summary for
+future reference here:
+
 1. **`assets/images/card.jpg`** — referenced only in the homepage's JSON-LD
-   schema, used for social/schema previews. Not part of any export. Needs
-   supplying.
-2. **Contact form** — still `action="#"` (see the `TODO` comment in
-   `contact.html`). Needs a Formspree (or similar) endpoint before it can
-   send anything; Carrd's own form backend doesn't survive export.
-3. **Ownership handoff** — plan is to move this to Fran's own GitHub
-   account, made public (required for free GitHub Pages), once it's ready
-   to go live. DNS: point navigatingseasons.co.uk at GitHub's four A
-   records plus a `www` CNAME.
-4. **Claude MCP connector for Fran** — no native GitHub connector in
-   claude.ai yet; needs a custom MCP connector (e.g. the official GitHub MCP
-   server) authenticated with a fine-grained PAT scoped to this repo, so she
-   can edit content by talking to Claude rather than through GitHub's UI.
+   schema, used for social/schema previews. Not part of any export. Cosmetic
+   only; needs supplying eventually.
+2. **Custom domain.** Repo is public and live on GitHub Pages, but no
+   `CNAME` file yet — navigatingseasons.co.uk itself isn't pointed at it.
+   Needs a `CNAME` file plus DNS (GitHub's four A records + `www` CNAME),
+   then "Enforce HTTPS" once it propagates.
+3. **Ownership handoff** — repo currently sits under Simone's GitHub
+   account. Plan is to transfer it to Fran's own account (or add her as a
+   collaborator) once she's ready.
+
+Contact form is done — sends via FormSubmit (free, no signup) straight to
+info@navigatingseasons.co.uk, with a honeypot field, spam-keyword blacklist,
+and an auto-reply to the sender. No longer outstanding.
+
+A dedicated MCP connector for Fran turned out to be unnecessary: she has
+her own Claude Code access, so she can just point it at this repo directly.
 
 ## Working notes
 
