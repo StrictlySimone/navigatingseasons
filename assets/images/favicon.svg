@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+	<rect width="64" height="64" rx="14" fill="#4A5A3B"/>
+	<text x="32" y="34" text-anchor="middle" dominant-baseline="central"
+		font-family="'Karla', 'Helvetica Neue', Arial, sans-serif" font-weight="700"
+		font-size="30" fill="#FBF3E7">NS</text>
+</svg>
