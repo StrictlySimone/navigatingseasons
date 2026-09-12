@@ -13,8 +13,8 @@
 	--ink-soft: #5C5850;
 	--rule: rgba(33, 31, 26, 0.14);
 	--sage: #6C7C59;
-	--accent: #A85B1E;
-	--accent-strong: #8B4A17;
+	--accent: #6C7C59;
+	--accent-strong: #4A5A3B;
 	--accent-contrast: #FBF3E7;
 	--focus: #1CCBD6;
 	--shadow: 0 20px 44px rgba(33, 31, 26, 0.1);
@@ -32,8 +32,8 @@ html[data-theme="dark"] {
 	--ink: #F0EDE6;
 	--ink-soft: #ABA89C;
 	--rule: rgba(240, 237, 230, 0.14);
-	--accent: #E0A458;
-	--accent-strong: #F0BC7A;
+	--accent: #8FA377;
+	--accent-strong: #B4C79C;
 	--accent-contrast: #171D14;
 	--shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
 	color-scheme: dark;
@@ -234,8 +234,6 @@ main { display: block; }
 	flex-wrap: wrap;
 }
 .hero-copy { flex: 1 1 460px; }
-.hero-mark { flex: 0 1 300px; display: flex; justify-content: center; }
-
 .hero .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 40em; }
 
 .hero-ctas {
@@ -259,17 +257,6 @@ main { display: block; }
 	border-radius: 999px;
 	border: 1px solid var(--rule);
 	color: var(--ink-soft);
-}
-
-.compass {
-	width: 260px;
-	height: 260px;
-	border-radius: 50%;
-	background: var(--sage);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0 0 0 12px var(--panel-tint), var(--shadow);
 }
 
 /* ---- Specialisms strip ------------------------------------------------------ */
