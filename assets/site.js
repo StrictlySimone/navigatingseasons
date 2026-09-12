@@ -45,5 +45,33 @@
 		document.querySelectorAll(".current-year").forEach(function (node) {
 			node.textContent = year;
 		});
+
+		var navToggle = document.getElementById("nav-toggle");
+		var navLinks = document.getElementById("nav-links");
+		if (navToggle && navLinks) {
+			var closeMenu = function () {
+				navToggle.setAttribute("aria-expanded", "false");
+				navLinks.classList.remove("is-open");
+			};
+			navToggle.addEventListener("click", function () {
+				var isOpen = navLinks.classList.toggle("is-open");
+				navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+			});
+			navLinks.addEventListener("click", function (event) {
+				if (event.target.closest("a")) {
+					closeMenu();
+				}
+			});
+			document.addEventListener("keydown", function (event) {
+				if (event.key === "Escape") {
+					closeMenu();
+				}
+			});
+			window.addEventListener("resize", function () {
+				if (window.innerWidth > 760) {
+					closeMenu();
+				}
+			});
+		}
 	});
 })();
