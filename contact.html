@@ -91,8 +91,11 @@
 			</div>
 
 			<div style="flex: 1.1 1 380px;">
-				<form class="contact-form" method="post" action="#">
-					<!-- TODO: replace action="#" with a Formspree (or similar) endpoint before launch -->
+				<form class="contact-form" method="POST" action="https://formsubmit.co/info@navigatingseasons.co.uk">
+					<input type="hidden" name="_subject" value="New enquiry from navigatingseasons.co.uk">
+					<input type="hidden" name="_next" value="https://navigatingseasons.co.uk/thank-you.html">
+					<input type="hidden" name="_template" value="table">
+					<input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off">
 					<div class="form-grid">
 						<div class="field">
 							<label for="name">Name</label>
@@ -120,6 +123,7 @@
 						<label for="consent">I accept the above information will be used to contact me.</label>
 					</div>
 					<button type="submit" class="btn btn-primary" style="width: 100%;">Submit Enquiry</button>
+					<p style="font-size: 0.78rem; color: var(--ink-soft); margin: 14px 0 0;">This form is relayed by FormSubmit, a third-party email-forwarding service — see the <a href="privacy-policy.html">Privacy Policy</a> for details. Prefer not to use it? Reach me directly by phone, SMS, or email above instead.</p>
 				</form>
 			</div>
 		</div>

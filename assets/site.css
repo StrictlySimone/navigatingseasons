@@ -18,7 +18,8 @@
 	--accent-contrast: #FBF3E7;
 	--focus: #0E8C94;
 	--shadow: 0 20px 44px rgba(33, 31, 26, 0.1);
-	--radius: 12px;
+	--shadow-soft: 0 10px 26px rgba(33, 31, 26, 0.07);
+	--radius: 16px;
 	--font-display: 'Lora', Georgia, 'Times New Roman', serif;
 	--font-body: 'Karla', 'Helvetica Neue', Arial, sans-serif;
 	color-scheme: light;
@@ -35,6 +36,7 @@ html[data-theme="dark"] {
 	--accent-strong: #B4C79C;
 	--accent-contrast: #171D14;
 	--shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
+	--shadow-soft: 0 10px 26px rgba(0, 0, 0, 0.3);
 	color-scheme: dark;
 }
 
@@ -281,7 +283,7 @@ main { display: block; }
 	letter-spacing: 0.03em;
 	padding: 7px 13px;
 	border-radius: 999px;
-	border: 1px solid var(--rule);
+	background: var(--panel-tint);
 	color: var(--ink-soft);
 }
 
@@ -325,10 +327,10 @@ main { display: block; }
 }
 
 .card {
-	border: 1px solid var(--rule);
 	border-radius: var(--radius);
-	padding: 22px;
-	background: var(--panel);
+	padding: 24px;
+	background: var(--panel-tint);
+	box-shadow: var(--shadow-soft);
 }
 
 .fee-figure {
@@ -340,8 +342,7 @@ main { display: block; }
 
 .callout {
 	background: var(--panel-tint);
-	border: 1px solid var(--rule);
-	border-radius: 16px;
+	border-radius: 20px;
 	padding: clamp(24px, 4vw, 40px);
 	box-shadow: var(--shadow);
 	display: flex;
@@ -362,11 +363,11 @@ main { display: block; }
 }
 @media (max-width: 760px) { .list-grid { grid-template-columns: 1fr; } }
 .list-grid li {
-	background: var(--panel);
-	border: 1px solid var(--rule);
-	border-radius: 10px;
+	background: var(--panel-tint);
+	border-radius: 14px;
 	padding: 14px 16px 14px 40px;
 	position: relative;
+	box-shadow: var(--shadow-soft);
 }
 .list-grid li::before {
 	content: "";
@@ -390,10 +391,10 @@ tbody tr:nth-child(even) { background: var(--panel-tint); }
 
 .crisis-banner {
 	background: var(--panel-tint);
-	border: 1px solid var(--rule);
-	border-radius: 10px;
+	border-radius: 14px;
 	padding: 18px 20px;
 	margin-bottom: 2rem;
+	box-shadow: var(--shadow-soft);
 }
 .crisis-banner strong { display: block; margin-bottom: 4px; color: var(--accent-strong); }
 html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
@@ -412,7 +413,7 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 	color: var(--ink);
 	background: var(--bg);
 	border: 1px solid var(--rule);
-	border-radius: 8px;
+	border-radius: 10px;
 	padding: 11px 13px;
 }
 .field textarea { min-height: 110px; resize: vertical; }
@@ -422,8 +423,7 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 
 .contact-form {
 	background: var(--panel);
-	border: 1px solid var(--rule);
-	border-radius: 16px;
+	border-radius: 20px;
 	padding: clamp(20px, 4vw, 36px);
 	box-shadow: var(--shadow);
 }
