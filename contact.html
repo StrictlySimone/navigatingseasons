@@ -93,7 +93,7 @@
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
 						SMS: 07397 530746
 					</a>
-					<a href="mailto:info@navigatingseasons.co.uk">
+					<a href="mailto:info@navigatingseasons.co.uk?subject=Enquiry%20from%20navigatingseasons.co.uk&amp;body=Please%20could%20you%20include%3A%0A-%20Your%20name%0A-%20A%20good%20time%20to%20reach%20you%0A-%20Briefly%2C%20what%20brought%20you%20here%20today%0A%0A">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
 						info@navigatingseasons.co.uk
 					</a>
@@ -140,12 +140,33 @@
 						<input type="tel" pattern="[0-9\-\(\)+ #*]+" minlength="7" maxlength="28" name="phone" id="phone" required>
 					</div>
 					<div class="field">
+						<label for="preferred-contact">Preferred Contact Method <span style="font-weight: 400; color: var(--ink-soft);">(optional)</span></label>
+						<select name="preferred-contact" id="preferred-contact">
+							<option value="">No preference</option>
+							<option value="Email">Email</option>
+							<option value="Phone call">Phone call</option>
+							<option value="Text message (SMS)">Text message (SMS)</option>
+						</select>
+					</div>
+					<div class="field">
 						<label for="subject">Subject</label>
 						<input type="text" name="subject" id="subject" maxlength="128" required>
 					</div>
 					<div class="field">
 						<label for="message">Message</label>
 						<textarea name="message" id="message" maxlength="16384" required></textarea>
+					</div>
+					<div class="field">
+						<label for="referral-source">How Did You Hear About Us? <span style="font-weight: 400; color: var(--ink-soft);">(optional)</span></label>
+						<select name="referral-source" id="referral-source">
+							<option value="">Prefer not to say</option>
+							<option value="Google search">Google search</option>
+							<option value="BACP directory">BACP directory</option>
+							<option value="Social media">Social media</option>
+							<option value="Friend or family referral">Friend or family referral</option>
+							<option value="GP or health professional referral">GP or health professional referral</option>
+							<option value="Other">Other</option>
+						</select>
 					</div>
 					<div class="consent">
 						<input type="checkbox" name="consent" id="consent" value="checked" required>
@@ -206,7 +227,7 @@
 		<div class="footer-links">
 			<a href="crisis-support.html" class="crisis">Crisis support</a>
 			<a href="privacy-policy.html">Privacy policy</a>
-			<a href="mailto:info@navigatingseasons.co.uk">info@navigatingseasons.co.uk</a>
+			<a href="mailto:info@navigatingseasons.co.uk?subject=Enquiry%20from%20navigatingseasons.co.uk&amp;body=Please%20could%20you%20include%3A%0A-%20Your%20name%0A-%20A%20good%20time%20to%20reach%20you%0A-%20Briefly%2C%20what%20brought%20you%20here%20today%0A%0A">info@navigatingseasons.co.uk</a>
 		</div>
 	</div>
 	<div class="wrap">

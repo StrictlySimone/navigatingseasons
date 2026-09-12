@@ -459,7 +459,7 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 
 .field { margin-bottom: 18px; }
 .field label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 7px; }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
 	width: 100%;
 	font-family: var(--font-body);
 	font-size: 0.95rem;
@@ -470,6 +470,7 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 	padding: 11px 13px;
 }
 .field textarea { min-height: 110px; resize: vertical; }
+.field select { cursor: pointer; }
 
 .consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px; font-size: 0.88rem; color: var(--ink-soft); }
 .consent input { margin-top: 3px; }
