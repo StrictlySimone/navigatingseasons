@@ -16,12 +16,11 @@
 	--accent: #6C7C59;
 	--accent-strong: #4A5A3B;
 	--accent-contrast: #FBF3E7;
-	--focus: #1CCBD6;
+	--focus: #0E8C94;
 	--shadow: 0 20px 44px rgba(33, 31, 26, 0.1);
 	--radius: 12px;
 	--font-display: 'Lora', Georgia, 'Times New Roman', serif;
 	--font-body: 'Karla', 'Helvetica Neue', Arial, sans-serif;
-	--font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 	color-scheme: light;
 }
 
@@ -73,16 +72,16 @@ p { margin: 0 0 1.1em; max-width: 68ch; }
 a {
 	color: var(--accent-strong);
 }
-a:hover { color: var(--accent); }
+a:hover { color: var(--ink); }
 
 img { max-width: 100%; display: block; }
 
 .kicker {
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	letter-spacing: 0.14em;
+	font-family: var(--font-body);
+	font-size: 0.78rem;
+	letter-spacing: 0.12em;
 	color: var(--accent-strong);
-	font-weight: 500;
+	font-weight: 700;
 	margin-bottom: 0.9em;
 }
 html[data-theme="dark"] .kicker { color: var(--accent); }
@@ -169,7 +168,7 @@ main { display: block; }
 	color: var(--ink);
 	text-decoration: none;
 }
-.nav-links a:hover { color: var(--accent); text-decoration: underline; }
+.nav-links a:hover { color: var(--ink); text-decoration: underline; }
 .nav-links a[aria-current="page"] {
 	font-weight: 700;
 	border-bottom: 2px solid var(--accent);
@@ -208,11 +207,16 @@ main { display: block; }
 	cursor: pointer;
 }
 
+/* Uses --accent-strong rather than --accent as the fill: at button size
+   (~15px bold) button text needs 4.5:1 against its own background, and
+   --accent alone (the mid-tone sage) only clears ~4.1:1 with light text —
+   a real WCAG AA fail, not just theoretical. --accent-strong clears ~6.8:1
+   in both themes. */
 .btn-primary {
-	background: var(--accent) !important;
+	background: var(--accent-strong) !important;
 	color: var(--accent-contrast) !important;
 }
-.btn-primary:hover { background: var(--accent-strong) !important; color: var(--accent-contrast) !important; }
+.btn-primary:hover { background: var(--ink) !important; color: var(--bg) !important; }
 
 .btn-quiet {
 	background: none;
@@ -222,7 +226,7 @@ main { display: block; }
 	padding: 0 0 2px;
 	font-weight: 500;
 }
-.btn-quiet:hover { color: var(--accent) !important; border-color: var(--accent); }
+.btn-quiet:hover { color: var(--ink) !important; border-color: var(--accent); }
 
 /* ---- Hero ------------------------------------------------------------------ */
 
@@ -250,8 +254,9 @@ main { display: block; }
 	flex-wrap: wrap;
 }
 .badge {
-	font-family: var(--font-mono);
-	font-size: 0.68rem;
+	font-family: var(--font-body);
+	font-size: 0.75rem;
+	font-weight: 600;
 	letter-spacing: 0.03em;
 	padding: 7px 13px;
 	border-radius: 999px;
@@ -262,10 +267,13 @@ main { display: block; }
 /* ---- Specialisms strip ------------------------------------------------------ */
 
 .strip {
-	background: var(--sage);
+	/* A touch deeper than --sage (#6C7C59) — the true brand swatch only
+	   gives the kicker label ~3.6:1 against white text, short of the 4.5:1
+	   small text needs. This still reads as the same sage. */
+	background: #63714F;
 	padding: 2.75rem 0;
 }
-.strip .kicker { color: #F0E6D2; }
+.strip .kicker { color: #FFFFFF; }
 .tag-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .tag {
 	background: var(--bg);
@@ -401,7 +409,7 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 
 .contact-methods { display: flex; flex-direction: column; gap: 14px; margin: 1.5rem 0; font-size: 0.98rem; }
 .contact-methods a { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
-.contact-methods a:hover { color: var(--accent); }
+.contact-methods a:hover { color: var(--ink); }
 .contact-methods svg { flex: none; }
 
 /* ---- FAQ ---------------------------------------------------------------------- */
@@ -431,4 +439,4 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 .footer-links a { color: var(--ink-soft); text-decoration: none; }
 .footer-links a.crisis { color: var(--accent-strong); font-weight: 700; }
 html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover { color: var(--ink); }
