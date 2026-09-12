@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('ns-theme');
+      document.documentElement.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : 'dark');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-8IEA2xsqa+49P+K6ptlvlotHC0By2tzdohCIV2eaOw8='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Page Not Found — Navigating Seasons Counselling Services</title>
+<meta name="robots" content="noindex">
+<meta id="theme-color-meta" name="theme-color" content="#171D14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+	<div class="wrap">
+		<a href="index.html" class="brand">
+			<svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+				<circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="1.4"/>
+				<path d="M17 6 L20 16 L17 14 L14 16 Z" style="fill: var(--accent);"/>
+				<path d="M17 28 L14 18 L17 20 L20 18 Z" fill="currentColor" opacity="0.55"/>
+				<circle cx="17" cy="17" r="2" fill="currentColor"/>
+			</svg>
+			Navigating Seasons
+		</a>
+		<ul class="nav-links">
+			<li><a href="about.html">About Me</a></li>
+			<li><a href="how-i-can-help.html">How I Can Help</a></li>
+			<li><a href="how-i-work.html">How I Work</a></li>
+			<li><a href="services-and-fees.html">Services &amp; Fees</a></li>
+			<li><a href="qualifications.html">Qualifications</a></li>
+			<li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+			<li>
+				<button type="button" id="theme-toggle" aria-pressed="false">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+					<span class="theme-toggle-label">Light</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<main id="main">
+	<section class="section">
+		<div class="wrap" style="text-align: center; max-width: 520px; margin: 0 auto; padding-top: 2rem; padding-bottom: 2rem;">
+			<div class="kicker">PAGE NOT FOUND</div>
+			<h1>This page has moved on to a different season</h1>
+			<p>The page you're looking for doesn't exist, or the link may be out of date. Here's how to find your way back:</p>
+			<div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 1.5rem;">
+				<a href="index.html" class="btn btn-primary">Go to Home</a>
+				<a href="contact.html" class="btn-quiet">Contact Fran &rarr;</a>
+			</div>
+			<div class="crisis-banner" style="margin-top: 2.5rem; text-align: left;">
+				<strong>If you're in crisis right now</strong>
+				This is just a missing page, not an emergency service. Please see <a href="crisis-support.html">Crisis Support</a>, or call 999, or Samaritans on 116 123, free, any time.
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="wrap">
+		<div>&reg; <span class="current-year">2026</span> Navigating Seasons &middot; Frances Palmer-Thompson, Oldbury, West Midlands</div>
+		<div class="footer-links">
+			<a href="crisis-support.html" class="crisis">Crisis support</a>
+			<a href="privacy-policy.html">Privacy policy</a>
+			<a href="mailto:info@navigatingseasons.co.uk">info@navigatingseasons.co.uk</a>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="site-credit">Site by <a href="https://flownarrate.com">FlowNarrate</a></div>
+	</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
