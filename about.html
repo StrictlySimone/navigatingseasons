@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('ns-theme');
+      document.documentElement.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : 'dark');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>About Me — Navigating Seasons Counselling Services</title>
+<meta name="description" content="Meet Frances Palmer-Thompson, a BACP-accredited integrative and accredited sight loss counsellor offering online and telephone counselling across the UK.">
+<meta id="theme-color-meta" name="theme-color" content="#171D14">
+<link rel="canonical" href="https://navigatingseasons.co.uk/about.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+	<div class="wrap">
+		<a href="index.html" class="brand">
+			<svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+				<circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="1.4"/>
+				<path d="M17 6 L20 16 L17 14 L14 16 Z" style="fill: var(--accent);"/>
+				<path d="M17 28 L14 18 L17 20 L20 18 Z" fill="currentColor" opacity="0.55"/>
+				<circle cx="17" cy="17" r="2" fill="currentColor"/>
+			</svg>
+			Navigating Seasons
+		</a>
+		<ul class="nav-links">
+			<li><a href="about.html" aria-current="page">About Me</a></li>
+			<li><a href="how-i-can-help.html">How I Can Help</a></li>
+			<li><a href="how-i-work.html">How I Work</a></li>
+			<li><a href="services-and-fees.html">Services &amp; Fees</a></li>
+			<li><a href="qualifications.html">Qualifications</a></li>
+			<li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+			<li>
+				<button type="button" id="theme-toggle" aria-pressed="false">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+					<span class="theme-toggle-label">Light</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<main id="main">
+	<section class="section">
+		<div class="wrap" style="display: flex; gap: 3.5rem; flex-wrap: wrap;">
+			<div style="flex: 1.3 1 420px;">
+				<div class="kicker">ABOUT</div>
+				<h1>Welcome to my warm, nurturing space</h1>
+
+				<p>I'm Fran, a BACP-accredited integrative and accredited sight loss counsellor offering online counselling across the UK for adults and young people (16+). I specialise in Complex Post Traumatic Stress Disorder (C-PTSD), sight loss, disability support, chronic health conditions, neurodiversity affirming therapy, identity struggles, and life transitions.</p>
+
+				<p>Therapy can help if you are coping with a new diagnosis, sight loss, burnout, or the feeling of being unseen or excluded. My approach is trauma-informed, focusing on how past experiences shape your present and providing a safe, supportive space to reflect and grow.</p>
+
+				<p>As someone living with sight loss, I bring both professional expertise and lived experience. This means you can expect compassionate, down-to-earth counselling where you feel understood without needing to explain everything.</p>
+
+				<p>Working together, we will explore your thoughts and feelings so you can make sense of your experiences, build confidence, and feel more grounded and connected. You do not need to have all the answers before starting counselling. What matters is you can begin your journey at your own pace.</p>
+
+				<p>If you are searching for accessible online or telephone therapy in the UK that is inclusive, supportive, culturally affirming and focused on your needs, get in touch today. I am here to listen and help you move forward.</p>
+
+				<a href="contact.html" class="btn btn-primary">Free 25-Minute Discovery Call</a>
+			</div>
+
+			<div style="flex: 0.8 1 260px;">
+				<img src="assets/images/image01.png" alt="A photo of a medium dark skin tone woman with a warm smile" title="Frances Palmer-Thompson" oncontextmenu="return false;" ondragstart="return false;" style="width: 100%; border-radius: 16px; box-shadow: var(--shadow);">
+
+				<div class="card" style="margin-top: 1.75rem;">
+					<div class="kicker" style="margin-bottom: 0.6rem;">CREDENTIALS</div>
+					<p style="margin-bottom: 0; line-height: 2;">
+						BACP Accredited &middot; MBACP (Accred)<br>
+						FdA Integrative Counselling<br>
+						Accredited Sight Loss Counsellor
+					</p>
+				</div>
+
+				<img src="assets/images/image02.jpg" alt="BACP Accreditation Badge. Member number 386762" style="margin-top: 1.5rem; max-width: 160px;">
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="wrap">
+		<div>&reg; <span class="current-year">2026</span> Navigating Seasons &middot; Frances Palmer-Thompson, Oldbury, West Midlands</div>
+		<div class="footer-links">
+			<a href="crisis-support.html" class="crisis">Crisis support</a>
+			<a href="privacy-policy.html">Privacy policy</a>
+			<a href="mailto:info@navigatingseasons.co.uk">info@navigatingseasons.co.uk</a>
+		</div>
+	</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -4,19 +4,19 @@
 	var root = document.documentElement;
 	var THEME_KEY = "ns-theme";
 
-	// Hash aliases: some links point at a sub-section inside a page rather
-	// than at a top-level <section>. "#supervision" is the Clinical
-	// Supervision callout that lives inside Services and Fees.
-	var SECTION_ALIASES = {
-		supervision: "servicesandfees-section"
-	};
+	// The <head> of every page sets data-theme synchronously (inline script)
+	// before CSS paints, to avoid a flash of the wrong theme. This file only
+	// needs to sync the toggle button/meta tag to whatever was already set,
+	// and handle clicks.
 
-	function applyTheme(theme) {
-		root.setAttribute("data-theme", theme);
+	function syncControls(theme) {
 		var toggle = document.getElementById("theme-toggle");
 		if (toggle) {
 			toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-			toggle.textContent = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+			var label = toggle.querySelector(".theme-toggle-label");
+			if (label) {
+				label.textContent = theme === "dark" ? "Light" : "Dark";
+			}
 		}
 		var themeColor = document.getElementById("theme-color-meta");
 		if (themeColor) {
@@ -24,124 +24,26 @@
 		}
 	}
 
-	function initialTheme() {
-		try {
-			var saved = localStorage.getItem(THEME_KEY);
-			if (saved === "dark" || saved === "light") {
-				return saved;
-			}
-		} catch (e) {
-			/* localStorage unavailable — fall through to default */
-		}
-		// Defaults to dark regardless of OS preference; visitors can still
-		// switch to light mode with the toggle, which is then remembered.
-		return "dark";
-	}
-
-	// Apply the theme immediately (before DOMContentLoaded) to avoid a
-	// flash of the wrong theme on page load.
-	applyTheme(initialTheme());
-
 	document.addEventListener("DOMContentLoaded", function () {
+		syncControls(root.getAttribute("data-theme") || "dark");
+
 		var toggle = document.getElementById("theme-toggle");
 		if (toggle) {
 			toggle.addEventListener("click", function () {
 				var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+				root.setAttribute("data-theme", next);
 				try {
 					localStorage.setItem(THEME_KEY, next);
 				} catch (e) {
 					/* ignore if storage is blocked */
 				}
-				applyTheme(next);
+				syncControls(next);
 			});
 		}
 
-		// ---- Section routing ----
-		// The original Carrd export relies on a bundled main.js that isn't
-		// part of this download, so this replaces it with the minimum
-		// needed to show one section at a time based on the URL hash.
-		var sections = Array.prototype.slice.call(
-			document.querySelectorAll(".site-main > .inner > section")
-		);
-		var sectionIds = sections.map(function (s) {
-			return s.id;
-		});
-
-		function resolveHash() {
-			var hash = window.location.hash.replace("#", "").toLowerCase();
-			if (!hash) {
-				return "home-section";
-			}
-			if (SECTION_ALIASES[hash]) {
-				return SECTION_ALIASES[hash];
-			}
-			var withSuffix = hash + "-section";
-			if (sectionIds.indexOf(withSuffix) !== -1) {
-				return withSuffix;
-			}
-			if (sectionIds.indexOf(hash) !== -1) {
-				return hash;
-			}
-			return "home-section";
-		}
-
-		function showSection(id) {
-			sections.forEach(function (section) {
-				if (section.id === id) {
-					section.classList.remove("inactive");
-					section.hidden = false;
-				} else {
-					section.classList.add("inactive");
-					// The .inactive class only sets opacity: 0 — without also
-					// hiding the element, every other section still takes up
-					// its full layout height (a huge blank scroll area) and
-					// screen readers still announce its content. `hidden`
-					// removes both problems.
-					section.hidden = true;
-				}
-			});
-		}
-
-		function route() {
-			showSection(resolveHash());
-			// If the hash points at a sub-element (like the supervision
-			// callout) rather than the section itself, scroll it into view
-			// once its parent section is visible.
-			var rawHash = window.location.hash.replace("#", "").toLowerCase();
-			if (SECTION_ALIASES[rawHash]) {
-				var target = document.querySelector('[data-scroll-id="' + rawHash + '"]');
-				if (target) {
-					window.requestAnimationFrame(function () {
-						target.scrollIntoView({ behavior: "smooth", block: "start" });
-					});
-				}
-			}
-		}
-
-		route();
-		window.addEventListener("hashchange", route);
-		document.body.classList.remove("is-loading");
-
-		// ---- Deferred images ----
-		// The Carrd export leaves these as data-src, meant to be swapped in
-		// by the same missing main.js — without it they permanently show
-		// the tiny solid-colour placeholder instead of the real photo.
-		document.querySelectorAll("img[data-src]").forEach(function (img) {
-			img.src = img.getAttribute("data-src");
-			img.removeAttribute("data-src");
-			var frame = img.closest(".frame");
-			if (frame) {
-				frame.classList.remove("deferred");
-			}
-		});
-
-		// ---- Footer year ----
-		// Every footer embed shares the same content, so give the year a
-		// class (not a duplicate id) and update every instance at once.
 		var year = new Date().getFullYear();
-		var yearNodes = document.querySelectorAll(".footer-dynamic-line");
-		yearNodes.forEach(function (node) {
-			node.innerHTML = "&reg; " + year + " Navigating Seasons";
+		document.querySelectorAll(".current-year").forEach(function (node) {
+			node.textContent = year;
 		});
 	});
 })();

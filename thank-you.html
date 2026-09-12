@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('ns-theme');
+      document.documentElement.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : 'dark');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Thank You — Navigating Seasons Counselling Services</title>
+<meta name="robots" content="noindex">
+<meta id="theme-color-meta" name="theme-color" content="#171D14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+	<div class="wrap">
+		<a href="index.html" class="brand">
+			<svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+				<circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="1.4"/>
+				<path d="M17 6 L20 16 L17 14 L14 16 Z" style="fill: var(--accent);"/>
+				<path d="M17 28 L14 18 L17 20 L20 18 Z" fill="currentColor" opacity="0.55"/>
+				<circle cx="17" cy="17" r="2" fill="currentColor"/>
+			</svg>
+			Navigating Seasons
+		</a>
+		<ul class="nav-links">
+			<li><a href="about.html">About Me</a></li>
+			<li><a href="how-i-can-help.html">How I Can Help</a></li>
+			<li><a href="how-i-work.html">How I Work</a></li>
+			<li><a href="services-and-fees.html">Services &amp; Fees</a></li>
+			<li><a href="qualifications.html">Qualifications</a></li>
+			<li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+			<li>
+				<button type="button" id="theme-toggle" aria-pressed="false">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+					<span class="theme-toggle-label">Light</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<main id="main">
+	<section class="section">
+		<div class="wrap" style="text-align: center; max-width: 500px; margin: 0 auto; padding-top: 2rem; padding-bottom: 2rem;">
+			<h1>Thank you</h1>
+			<p>Thank you for considering Navigating Seasons. I aim to get in touch within two working days.</p>
+			<p>Fran</p>
+			<a href="index.html" class="btn btn-primary">Home</a>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="wrap">
+		<div>&reg; <span class="current-year">2026</span> Navigating Seasons &middot; Frances Palmer-Thompson, Oldbury, West Midlands</div>
+		<div class="footer-links">
+			<a href="crisis-support.html" class="crisis">Crisis support</a>
+			<a href="privacy-policy.html">Privacy policy</a>
+			<a href="mailto:info@navigatingseasons.co.uk">info@navigatingseasons.co.uk</a>
+		</div>
+	</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
