@@ -89,8 +89,15 @@
 			sections.forEach(function (section) {
 				if (section.id === id) {
 					section.classList.remove("inactive");
+					section.hidden = false;
 				} else {
 					section.classList.add("inactive");
+					// The .inactive class only sets opacity: 0 — without also
+					// hiding the element, every other section still takes up
+					// its full layout height (a huge blank scroll area) and
+					// screen readers still announce its content. `hidden`
+					// removes both problems.
+					section.hidden = true;
 				}
 			});
 		}
@@ -114,6 +121,19 @@
 		route();
 		window.addEventListener("hashchange", route);
 		document.body.classList.remove("is-loading");
+
+		// ---- Deferred images ----
+		// The Carrd export leaves these as data-src, meant to be swapped in
+		// by the same missing main.js — without it they permanently show
+		// the tiny solid-colour placeholder instead of the real photo.
+		document.querySelectorAll("img[data-src]").forEach(function (img) {
+			img.src = img.getAttribute("data-src");
+			img.removeAttribute("data-src");
+			var frame = img.closest(".frame");
+			if (frame) {
+				frame.classList.remove("deferred");
+			}
+		});
 
 		// ---- Footer year ----
 		// Every footer embed shares the same content, so give the year a

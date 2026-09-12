@@ -65,6 +65,13 @@ select:focus-visible {
 	outline-offset: 2px;
 }
 
+/* main.css's reset sets `section { display: block; }`, which (being an
+   author-stylesheet rule) beats the browser's own [hidden] default even
+   though ours loads first — so it has to be restated explicitly here. */
+.site-main > .inner > section[hidden] {
+	display: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
