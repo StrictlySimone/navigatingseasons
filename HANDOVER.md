@@ -71,7 +71,9 @@ would matter most:
 
 - Crisis helpline numbers and hours
 - Your BACP/accreditation registration numbers
-- The Privacy Policy wording
+- The Privacy Policy wording (including the "Website and cookies"
+  section, which says the site sets no cookies — update it if analytics
+  or anything else that sets cookies is ever added)
 - Session fees and cancellation policy
 
 For any of these, it's worth double-checking the exact wording (or asking
@@ -79,10 +81,8 @@ Simone to sanity-check) before publishing.
 
 ## Still outstanding
 
-Just one small thing: **`assets/images/card.jpg`** is referenced for how
-the site previews when shared as a link (e.g. in a text message or on
-Facebook), but doesn't exist yet. Cosmetic only — the site works fully
-without it.
+Nothing. The link-preview image (`assets/images/card.jpg`, shown when the
+site is shared in a text message or on social media) is in place.
 
 ## If something looks broken
 
