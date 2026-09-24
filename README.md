@@ -31,8 +31,11 @@ Static HTML/CSS, no build step, no framework. Hosted on GitHub Pages.
 
 Typefaces: **Lora** (headings), **Karla** (body), **IBM Plex Mono** (small
 labels), via Google Fonts. All colors are CSS custom properties in
-`assets/site.css`, redefined under `html[data-theme="dark"]` — dark mode is
-the default, with a toggle that remembers the visitor's choice.
+`assets/site.css`, redefined under `html[data-theme="dark"]`. The site opens
+in the visitor's device preference (`prefers-color-scheme`, light if unset),
+with a toggle that remembers the visitor's choice. The inline theme script in
+each page's `<head>` is allowlisted by SHA-256 hash in the CSP — if you edit
+that script, recompute the hash and update it on every page.
 
 ## Accessibility
 

@@ -3,16 +3,18 @@
 <head>
 <script>
   (function () {
+    var t;
     try {
-      var t = localStorage.getItem('ns-theme');
-      document.documentElement.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : 'dark');
-    } catch (e) {
-      document.documentElement.setAttribute('data-theme', 'dark');
+      t = localStorage.getItem('ns-theme');
+    } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
     }
+    document.documentElement.setAttribute('data-theme', t);
   })();
 </script>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-8IEA2xsqa+49P+K6ptlvlotHC0By2tzdohCIV2eaOw8='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-c6EGNTK9EILoYzuCnSYKF89/9BJynjMQ52F2sC6eqkw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">

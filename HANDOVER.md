@@ -26,7 +26,8 @@ enquiry form and FAQ), and a Thank You page after someone submits the form.
 There's also a custom "page not found" page if a link is ever mistyped or
 goes out of date.
 
-- **Light and dark mode.** Dark is the default; there's a toggle in the top
+- **Light and dark mode.** The site opens in whichever mode the visitor's own
+  device is set to (light for most people); there's a toggle in the top
   right of every page. It remembers your choice.
 - **The contact form works.** It's sent through a free service called
   FormSubmit, straight to info@navigatingseasons.co.uk. Because it's a
