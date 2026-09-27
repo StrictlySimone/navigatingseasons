@@ -9,7 +9,7 @@ Frances Palmer-Thompson's BACP-accredited counselling practice.
 ```
 index.html                Home
 about.html                About Me
-how-i-can-help.html       Specialisms
+how-i-can-help.html       Areas of work
 how-i-work.html           Therapeutic approach
 services-and-fees.html    Pricing, cancellation policy, clinical supervision
 qualifications.html       Accreditations and training
