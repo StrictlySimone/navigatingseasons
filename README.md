@@ -13,6 +13,8 @@ how-i-can-help.html       Specialisms
 how-i-work.html           Therapeutic approach
 services-and-fees.html    Pricing, cancellation policy, clinical supervision
 qualifications.html       Accreditations and training
+articles.html             Articles: the Navigating Counselling series
+navigating-counselling-autumn-2026.html   Autumn 2026 article
 crisis-support.html       24/7 crisis contacts
 privacy-policy.html       UK GDPR privacy policy
 contact.html              Contact form + FAQ

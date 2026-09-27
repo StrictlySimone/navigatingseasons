@@ -23,6 +23,7 @@ Claude Code) can push changes directly — no need to go through Simone.
 Ten pages: Home, About Me, How I Can Help, How I Work, Services & Fees,
 Qualifications, Crisis Support, Privacy Policy, Contact (with a working
 enquiry form and FAQ), and a Thank You page after someone submits the form.
+There's also an Articles section (see below).
 There's also a custom "page not found" page if a link is ever mistyped or
 goes out of date.
 
@@ -78,6 +79,50 @@ would matter most:
 
 For any of these, it's worth double-checking the exact wording (or asking
 Simone to sanity-check) before publishing.
+
+## Articles: the Navigating Counselling series
+
+The **Articles** page (`articles.html`) holds the Navigating Counselling
+series: four seasonal articles, each on its own page. Autumn 2026 is the
+first (`navigating-counselling-autumn-2026.html`).
+
+Each season has its own accent colour and heart, separate from the site's
+green branding. The colours are already set up and contrast-checked for
+light and dark mode:
+
+| Season | Accent | Heart | Class |
+|---|---|---|---|
+| Autumn | terracotta / burnt orange | 🤎 | `season-autumn` |
+| Winter | blue | 💙 | `season-winter` |
+| Spring | cherry-blossom pink | 🩷 | `season-spring` |
+| Summer | sunny yellow (deep ochre in light mode, for legibility) | 💛 | `season-summer` |
+
+No green heart is used in the series. The season is always written out in
+words (e.g. "Autumn 2026") so it never depends on seeing the colour.
+
+**To add the next article**, ask Claude Code something like: "Read
+HANDOVER.md, then add the Winter 2026/27 Navigating Counselling article —
+here is the text." It should:
+
+1. Copy the Autumn page to a new file, e.g.
+   `navigating-counselling-winter-2026-27.html`, and replace the title,
+   description, canonical/og:url, season label, heart, body and sign-off
+   heart. Use the article text exactly as supplied: no rewriting.
+2. Change `season-autumn` to the new season's class.
+3. Add a card for it at the top of the list on `articles.html`.
+4. Add previous/next links between the articles, in place of the
+   "Previous/next" comment on each article page:
+
+   ```html
+   <nav class="series-nav" aria-label="More in Navigating Counselling">
+   	<a href="navigating-counselling-autumn-2026.html"><span>Previous: Autumn 2026</span>Navigating Counselling: Finding Your Way Through the Noise</a>
+   	<a class="series-nav-next" href="navigating-counselling-winter-2026-27.html"><span>Next: Winter 2026/27</span>(winter title)</a>
+   </nav>
+   ```
+
+   The first article has only a "Next" link and the latest only a
+   "Previous" one. Never link to an article that isn't published yet.
+5. Add the new page to `sitemap.xml` and `llms.txt`.
 
 ## Still outstanding
 
