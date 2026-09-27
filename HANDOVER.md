@@ -110,6 +110,8 @@ here is the text." It should:
    heart. Use the article text exactly as supplied: no rewriting.
 2. Change `season-autumn` to the new season's class.
 3. Add a card for it at the top of the list on `articles.html`.
+   Also swap the Autumn card on the home page (`index.html`, "Articles"
+   section) for the new one, so the home page always shows the latest.
 4. Add previous/next links between the articles, in place of the
    "Previous/next" comment on each article page:
 
