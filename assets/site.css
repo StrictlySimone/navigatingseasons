@@ -661,3 +661,9 @@ html[data-theme="dark"] .season-summer { --season: #E9C55C; --season-line: #CFA6
 .series-nav a { display: block; max-width: 30ch; }
 .series-nav .series-nav-next { margin-left: auto; text-align: right; }
 .series-nav span { display: block; font-size: 0.8rem; color: var(--ink-soft); }
+
+.article-copyright {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	color: var(--ink-soft);
+}
