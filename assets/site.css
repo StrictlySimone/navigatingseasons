@@ -525,3 +525,145 @@ html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
 }
 .site-credit a { color: var(--ink-soft); }
 .site-credit a:hover { color: var(--ink); }
+
+/* ---- Articles: Navigating Counselling seasonal series ---------------------------
+   Each article (and its card on articles.html) carries one season class.
+   The class sets two accent tokens, separate from the site's green brand:
+     --season         text-sized details (the seasonal label)
+     --season-line    decorative lines and edges
+   Measured against --bg, --panel and --panel-tint in each theme:
+   --season clears 4.5:1 (text), --season-line clears 3:1 (graphics).
+   Summer's light-mode shades are deep ochre, not bright yellow: no yellow
+   light enough to read as "sunny" is legible as text on the cream background.
+   Only colour accents change per season; the words (e.g. "Autumn 2026")
+   always carry the meaning. */
+
+.season-autumn { --season: #A5461F; --season-line: #C2622D; }
+.season-winter { --season: #2E5D8A; --season-line: #4A7BAA; }
+.season-spring { --season: #A3365F; --season-line: #C4577E; }
+.season-summer { --season: #7A5700; --season-line: #A87C00; }
+
+html[data-theme="dark"] .season-autumn { --season: #E3936A; --season-line: #D07A4C; }
+html[data-theme="dark"] .season-winter { --season: #94BCE3; --season-line: #6F9DCB; }
+html[data-theme="dark"] .season-spring { --season: #EFA3BF; --season-line: #D9809F; }
+html[data-theme="dark"] .season-summer { --season: #E9C55C; --season-line: #CFA630; }
+
+/* "Autumn 2026" is written in normal case in the HTML so screen readers
+   read words, not letters; it's shown in capitals here. */
+.season-label {
+	font-size: 0.78rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--season);
+	margin: 0 0 0.9em;
+}
+
+.series-intro { max-width: 62ch; color: var(--ink-soft); }
+
+.article-list {
+	list-style: none;
+	margin: 1.75rem 0 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+	gap: 16px;
+	max-width: 760px;
+}
+
+/* The whole card is clickable via the title link's ::after, so it stays a
+   single tab stop whose accessible name is the article title. */
+.article-card {
+	position: relative;
+	height: 100%;
+	border-left: 4px solid var(--season-line);
+}
+.article-card h3 { margin: 0; font-size: 1.25rem; }
+.article-card h3 a { color: var(--ink); text-decoration: none; }
+.article-card h3 a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: var(--radius);
+}
+.article-card:hover h3 a { text-decoration: underline; }
+.article-card h3 a:focus-visible { outline: none; }
+.article-card h3 a:focus-visible::after {
+	outline: 3px solid var(--focus);
+	outline-offset: 2px;
+}
+
+.breadcrumb ol {
+	list-style: none;
+	margin: 0 0 2rem;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	font-size: 0.88rem;
+	color: var(--ink-soft);
+}
+.breadcrumb li + li::before {
+	content: "\203A";
+	margin-right: 6px;
+}
+
+.article {
+	max-width: 66ch;
+	margin: 0 auto;
+}
+.article-header {
+	border-bottom: 2px solid var(--season-line);
+	padding-bottom: 1.5rem;
+	margin-bottom: 2.25rem;
+}
+.article-header h1 { margin-bottom: 0; }
+.article-body { font-size: 1.08rem; line-height: 1.75; }
+.article-body p { max-width: none; }
+.article-body h2 { margin-top: 2.2em; font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.65rem); }
+.article-body ul { margin: 0 0 1.1em; padding-left: 1.3em; }
+.article-body li { margin-bottom: 0.35em; }
+.article-body li::marker { color: var(--season); }
+
+.article-signoff {
+	margin-top: 2.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--rule);
+}
+.article-signoff .signoff-name {
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	font-weight: 500;
+	margin-bottom: 0.2em;
+}
+.article-signoff .signoff-byline {
+	font-size: 0.9rem;
+	color: var(--ink-soft);
+	margin: 0;
+}
+
+.article-footer {
+	margin-top: 2.5rem;
+	font-size: 0.95rem;
+}
+
+/* Previous/next between articles in the series. Not used until a second
+   article is published — see HANDOVER.md. */
+.series-nav {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-top: 2.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--rule);
+}
+.series-nav a { display: block; max-width: 30ch; }
+.series-nav .series-nav-next { margin-left: auto; text-align: right; }
+.series-nav span { display: block; font-size: 0.8rem; color: var(--ink-soft); }
+
+.article-copyright {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	color: var(--ink-soft);
+}
