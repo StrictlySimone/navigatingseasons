@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  (function () {
+    var t;
+    try {
+      t = localStorage.getItem('ns-theme');
+    } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-c6EGNTK9EILoYzuCnSYKF89/9BJynjMQ52F2sC6eqkw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Clinical Supervision for Counsellors &amp; Trainees — Navigating Seasons</title>
+<meta name="description" content="Integrative clinical supervision online and by telephone across the UK for qualified, newly qualified and trainee counsellors. £50 for a 90-minute session, with reduced-rate places for counselling students.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Navigating Seasons">
+<meta property="og:title" content="Clinical Supervision for Counsellors &amp; Trainees — Navigating Seasons">
+<meta property="og:description" content="Integrative clinical supervision online and by telephone across the UK for qualified, newly qualified and trainee counsellors. £50 for a 90-minute session, with reduced-rate places for counselling students.">
+<meta property="og:url" content="https://navigatingseasons.co.uk/clinical-supervision.html">
+<meta property="og:image" content="https://navigatingseasons.co.uk/assets/images/card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clinical Supervision for Counsellors &amp; Trainees — Navigating Seasons">
+<meta name="twitter:description" content="Integrative clinical supervision online and by telephone across the UK for qualified, newly qualified and trainee counsellors. £50 for a 90-minute session, with reduced-rate places for counselling students.">
+<meta name="twitter:image" content="https://navigatingseasons.co.uk/assets/images/card.jpg">
+<meta id="theme-color-meta" name="theme-color" content="#171D14">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="canonical" href="https://navigatingseasons.co.uk/clinical-supervision.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Service",
+"name": "Clinical supervision for counsellors and trainees",
+"serviceType": "Integrative counselling supervision",
+"url": "https://navigatingseasons.co.uk/clinical-supervision.html",
+"description": "Integrative clinical supervision online and by telephone across the UK for qualified, newly qualified and trainee counsellors. £50 for a 90-minute session, with reduced-rate places for counselling students.",
+"provider": { "@id": "https://navigatingseasons.co.uk/#localbusiness", "@type": "LocalBusiness", "name": "Navigating Seasons Counselling Services" },
+"areaServed": { "@type": "Country", "name": "United Kingdom" },
+"audience": { "@type": "Audience", "audienceType": "Qualified, newly qualified and trainee counsellors" },
+"offers": [
+{ "@type": "Offer", "name": "90-minute supervision session", "price": "50", "priceCurrency": "GBP" },
+{ "@type": "Offer", "name": "Reduced-rate place for counselling students", "price": "40", "priceCurrency": "GBP" }
+]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+	<div class="wrap">
+		<a href="index.html" class="brand" aria-label="Navigating Seasons compass logo, home page">
+			<svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+				<circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="1.4"/>
+				<path d="M17 6 L20 16 L17 14 L14 16 Z" style="fill: var(--accent);"/>
+				<path d="M17 28 L14 18 L17 20 L20 18 Z" fill="currentColor" opacity="0.55"/>
+				<circle cx="17" cy="17" r="2" fill="currentColor"/>
+			</svg>
+			Navigating Seasons
+		</a>
+		<button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+			<span class="sr-only">Menu</span>
+			<svg class="nav-toggle-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+			<svg class="nav-toggle-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+		</button>
+		<ul class="nav-links" id="nav-links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Me</a></li>
+			<li><a href="how-i-can-help.html">How I Can Help</a></li>
+			<li><a href="how-i-work.html">How I Work</a></li>
+			<li><a href="services-and-fees.html">Services &amp; Fees</a></li>
+			<li><a href="clinical-supervision.html" aria-current="page">Clinical Supervision</a></li>
+			<li><a href="qualifications.html">Qualifications</a></li>
+			<li><a href="articles.html">Articles</a></li>
+			<li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+			<li>
+				<button type="button" id="theme-toggle" aria-pressed="false">
+					<svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M3 12h2M19 12h2M4.6 19.4l1.4-1.4M18 6l1.4-1.4"/></svg>
+					<svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+					<span class="theme-toggle-label">Light</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<main id="main">
+	<section class="section">
+		<div class="wrap">
+			<div class="kicker">CLINICAL SUPERVISION &middot; FOR COUNSELLORS &amp; TRAINEES</div>
+			<h1>A reflective space for your client work</h1>
+			<p style="max-width: 62ch;">I offer Integrative counselling supervision to qualified, newly qualified and trainee counsellors, providing a supportive, reflective and collaborative space to explore client work, ethical and professional practice, and ongoing development.</p>
+			<p style="max-width: 62ch;">Supervision is offered online and by telephone UK-wide, and is a separate service from my counselling work.</p>
+
+			<div class="callout" style="margin-top: 2rem;">
+				<div class="callout-body">
+					<div class="kicker">SUPERVISOR IN TRAINING &middot; CPCAB LEVEL 6</div>
+					<p>I am an accredited counsellor currently completing the CPCAB Level 6 Certificate in Therapeutic Counselling Supervision and developing my practice as a Supervisor in Training.</p>
+					<p style="margin-bottom: 0;">If you are a counselling student, please check with your training provider whether supervision with a supervisor currently completing their Level 6 supervision qualification can count towards your course requirements.</p>
+				</div>
+				<div class="callout-fee">
+					<div class="fee-figure">&pound;50</div>
+					<p style="color: var(--ink-soft); margin-bottom: 1rem;">per 90-minute session</p>
+					<a href="contact.html" class="btn-quiet">Enquire about supervision &rarr;</a>
+				</div>
+			</div>
+
+			<h2 style="margin-top: 2.5rem;">My approach to supervision</h2>
+			<p style="max-width: 62ch;">My supervision approach is grounded in an Integrative framework, with particular interests in supporting practitioners working with complex trauma and C-PTSD, neurodiversity, chronic health conditions and sight loss, as well as those working across general therapeutic practice.</p>
+			<p style="max-width: 62ch;">My approach is informed by my professional counselling experience and my lived experience of chronic health conditions and sight loss. I aim to offer supervision that is thoughtful, collaborative and focused on helping practitioners develop confidence and deepen their reflective practice.</p>
+
+			<h2 style="margin-top: 2.5rem;">Supervision fees</h2>
+			<div class="grid-3" style="margin: 0 0 2rem;">
+				<div class="card">
+					<div class="fee-figure">Free</div>
+					<h3>25-minute discovery call</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">A chance to discuss your supervision needs and whether we would be a good fit, with no obligation.</p>
+				</div>
+				<div class="card">
+					<div class="fee-figure">&pound;50</div>
+					<h3>Supervision session (90 minutes)</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">Online or by telephone, with flexible monthly scheduling.</p>
+				</div>
+				<div class="card">
+					<div class="fee-figure">&pound;40</div>
+					<h3>Reduced rate for counselling students</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">A limited number of reduced-rate places are available for counselling students.</p>
+				</div>
+			</div>
+			<p style="max-width: 62ch;">Supervision sessions follow the same <a href="services-and-fees.html#cancellation-policy">cancellation policy</a> as counselling: please give at least 24 hours' notice to cancel or reschedule.</p>
+
+			<h2 style="margin-top: 2.5rem;">Frequently asked questions</h2>
+			<div>
+				<div class="faq-item">
+					<h3>Who do you offer clinical supervision to?</h3>
+					<p>I offer Integrative counselling supervision to qualified, newly qualified and trainee counsellors. If you are a counselling student, please check with your training provider whether supervision with a supervisor currently completing their Level 6 supervision qualification can count towards your course requirements.</p>
+				</div>
+				<div class="faq-item">
+					<h3>How are supervision sessions delivered and what are the fees?</h3>
+					<p>Supervision is offered online and by telephone UK-wide, with flexible monthly scheduling. Sessions are 90 minutes and cost £50, with limited reduced-rate places at £40 for counselling students. A free 25-minute discovery call is available to discuss your supervision needs and whether we would be a good fit.</p>
+				</div>
+				<div class="faq-item">
+					<h3>Is supervision confidential?</h3>
+					<p>Yes. Supervision is a confidential space. When discussing client work, I ask that you anonymise clients and avoid sharing identifying details. As with counselling, there are some limits to confidentiality. These include serious concerns about risk or safeguarding, or significant ethical or professional concerns, which we would aim to discuss together first wherever possible. As I am currently completing my Level 6 supervision training, I take my supervision practice to my own supervisor and training group, where any discussion is anonymised. For counselling students, any reports your training provider requires will be agreed with you in advance. Full details are set out in our supervision agreement.</p>
+				</div>
+				<div class="faq-item">
+					<h3>What if I need to cancel or reschedule a supervision session?</h3>
+					<p>Supervision sessions can be cancelled or rescheduled with at least 24 hours' notice. Cancellations made within 24 hours, or missed sessions, will be charged the full session fee. I understand that emergencies can happen and will consider these on a case-by-case basis.</p>
+				</div>
+			</div>
+
+			<p style="max-width: 62ch; margin-top: 2.5rem;">You can also read about <a href="about.html">my background</a> and <a href="qualifications.html">my qualifications and current training</a>.</p>
+			<a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book a free 25-minute discovery call</a>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="wrap">
+		<div>&reg; <span class="current-year">2026</span> Navigating Seasons &middot; Frances Palmer-Thompson, Oldbury, West Midlands</div>
+		<div class="footer-links">
+			<a href="crisis-support.html" class="crisis">Crisis support</a>
+			<a href="privacy-policy.html">Privacy policy</a>
+			<a href="mailto:info@navigatingseasons.co.uk?subject=Enquiry%20from%20navigatingseasons.co.uk&amp;body=Please%20could%20you%20include%3A%0A-%20Your%20name%0A-%20A%20good%20time%20to%20reach%20you%0A-%20Briefly%2C%20what%20brought%20you%20here%20today%0A%0A">info@navigatingseasons.co.uk</a>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="site-credit">Site by <a href="https://flownarrate.com">FlowNarrate</a></div>
+	</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -20,8 +20,8 @@ Claude Code) can push changes directly — no need to go through Simone.
 
 ## What's on the site
 
-Ten pages: Home, About Me, How I Can Help, How I Work, Services & Fees,
-Qualifications, Crisis Support, Privacy Policy, Contact (with a working
+Eleven pages: Home, About Me, How I Can Help, How I Work, Services & Fees,
+Clinical Supervision, Qualifications, Crisis Support, Privacy Policy, Contact (with a working
 enquiry form and FAQ), and a Thank You page after someone submits the form.
 There's also an Articles section (see below).
 There's also a custom "page not found" page if a link is ever mistyped or

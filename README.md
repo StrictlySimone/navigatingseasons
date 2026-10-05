@@ -11,7 +11,8 @@ index.html                Home
 about.html                About Me
 how-i-can-help.html       Areas of work
 how-i-work.html           Therapeutic approach
-services-and-fees.html    Pricing, cancellation policy, clinical supervision
+services-and-fees.html    Pricing, cancellation policy, supervision summary
+clinical-supervision.html Clinical supervision: approach, fees, FAQs
 qualifications.html       Accreditations and training
 articles.html             Articles: the Navigating Counselling series
 navigating-counselling-autumn-2026.html   Autumn 2026 article
