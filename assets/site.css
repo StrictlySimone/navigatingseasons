@@ -491,7 +491,10 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 
 .faq-item { padding: 1.2rem 0; border-bottom: 1px solid var(--rule); }
 .faq-item:last-child { border-bottom: none; }
-.faq-item h3 { margin-bottom: 0.4em; font-size: 1.02rem; }
+.faq-group + .faq-group { margin-top: 2.25rem; }
+.faq-group-title { margin-bottom: 0.2em; color: var(--accent-strong); }
+html[data-theme="dark"] .faq-group-title { color: var(--accent); }
+.faq-item h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0 0 0.4em; font-size: 1.02rem; }
 .faq-item p { margin-bottom: 0; color: var(--ink-soft); }
 
 /* ---- Footer --------------------------------------------------------------------- */
