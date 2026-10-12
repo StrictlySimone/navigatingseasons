@@ -41,9 +41,21 @@
 			});
 		}
 
-		var year = new Date().getFullYear();
+		var now = new Date();
+		var year = now.getFullYear();
 		document.querySelectorAll(".current-year").forEach(function (node) {
 			node.textContent = year;
+		});
+
+		// Seasonal notices (e.g. Christmas closure) are in the HTML with the
+		// `hidden` attribute and only appear between data-show-from and
+		// data-show-until (YYYY-MM-DD, inclusive, visitor's local date), so
+		// they switch themselves on and off without anyone editing the page.
+		var today = year + "-" + ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
+		document.querySelectorAll("[data-show-from][data-show-until]").forEach(function (node) {
+			if (today >= node.getAttribute("data-show-from") && today <= node.getAttribute("data-show-until")) {
+				node.hidden = false;
+			}
 		});
 
 		var navToggle = document.getElementById("nav-toggle");

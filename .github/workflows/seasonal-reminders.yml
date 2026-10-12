@@ -1,0 +1,24 @@
+name: Seasonal reminders
+
+# Every Monday morning, opens a GitHub issue for any event in
+# .github/seasonal-calendar.json that's coming up (Bonfire Night, Christmas,
+# the next seasonal article, ...), with ideas and a checklist. Each event
+# gets one issue per year. Can also be run by hand from the Actions tab.
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/seasonal_reminders.py
+        env:
+          GH_TOKEN: ${{ github.token }}
