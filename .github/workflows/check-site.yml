@@ -1,0 +1,23 @@
+name: Check site
+
+# Checks sitemap.xml, llms.txt, structured data and seasonal notices on every
+# change. If it fails, the log says what to fix in plain English. Most
+# problems are fixed by running: python3 scripts/check_site.py --fix
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history, to know when each page last changed
+      - run: python3 scripts/check_site.py

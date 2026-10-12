@@ -1,0 +1,211 @@
+{
+  "_about": "Dates the website should prepare for. Every Monday a GitHub Action (.github/workflows/seasonal-reminders.yml) opens an issue for each event whose reminder date has arrived, with the ideas and checklist below. 'when' can be 'MM-DD', 'last sunday of october', 'second sunday of november', or 'easter-21' (days from Easter Sunday). 'remind_days_before' should leave about three weeks for Google to find a new page. Ask Claude Code to add, remove or change events here.",
+  "events": [
+    {
+      "name": "New Year and January",
+      "when": "01-01",
+      "remind_days_before": 21,
+      "why": "January is one of the busiest times of year for people looking for a counsellor.",
+      "ideas": [
+        "Starting counselling in the new year, without the 'new year, new you' pressure",
+        "Make sure the free 25-minute initial conversation is easy to find from the home page"
+      ],
+      "tasks": [
+        "After 2 January, remove the Christmas and New Year line from llms.txt (the notices on the pages hide themselves)"
+      ]
+    },
+    {
+      "name": "Time to Talk Day",
+      "when": "first thursday of february",
+      "remind_days_before": 21,
+      "why": "A national day about talking about mental health. Lots of people search for it, and it's an easy one to share on LinkedIn and Google Business Profile.",
+      "ideas": [
+        "What it's like to talk to a counsellor for the first time",
+        "Talking about mental health when you're neurodivergent or living with sight loss"
+      ]
+    },
+    {
+      "name": "Spring Navigating Counselling article",
+      "when": "03-01",
+      "remind_days_before": 21,
+      "why": "The next article in the four-part seasonal series is due.",
+      "ideas": [
+        "Follow the 'To add the next article' steps in HANDOVER.md"
+      ]
+    },
+    {
+      "name": "Mother's Day (UK)",
+      "when": "easter-21",
+      "remind_days_before": 28,
+      "why": "A hard day for many people: grief, complicated or estranged relationships, infertility and baby loss.",
+      "ideas": [
+        "When Mother's Day is hard: grief, estrangement and complicated family relationships"
+      ]
+    },
+    {
+      "name": "Clocks go forward",
+      "when": "last sunday of march",
+      "remind_days_before": 21,
+      "why": "Lost sleep and changed routines hit hardest for people with chronic health conditions and fatigue.",
+      "ideas": [
+        "Pacing and energy when routines change (chronic health conditions)"
+      ]
+    },
+    {
+      "name": "Autism Acceptance Month",
+      "when": "04-01",
+      "remind_days_before": 28,
+      "why": "April is Autism Acceptance Month, which fits the neurodiversity-affirming work.",
+      "ideas": [
+        "What neurodiversity-affirming counselling means in practice",
+        "Masking and burnout"
+      ]
+    },
+    {
+      "name": "Mental Health Awareness Week",
+      "when": "05-10",
+      "remind_days_before": 35,
+      "why": "The UK's biggest mental health awareness week, usually mid-May. Check this year's dates and theme on the Mental Health Foundation website.",
+      "ideas": [
+        "Write about this year's theme in relation to Fran's specialisms"
+      ]
+    },
+    {
+      "name": "Summer Navigating Counselling article",
+      "when": "06-01",
+      "remind_days_before": 21,
+      "why": "The next article in the four-part seasonal series is due.",
+      "ideas": [
+        "Follow the 'To add the next article' steps in HANDOVER.md"
+      ]
+    },
+    {
+      "name": "Father's Day (UK)",
+      "when": "third sunday of june",
+      "remind_days_before": 28,
+      "why": "Like Mother's Day, a difficult day for people who are grieving or have complicated family relationships.",
+      "ideas": [
+        "When Father's Day is hard"
+      ]
+    },
+    {
+      "name": "Exam results season",
+      "when": "08-13",
+      "remind_days_before": 28,
+      "why": "A-level and GCSE results in mid-August. Fran works with young people aged 16+.",
+      "ideas": [
+        "Coping with results day and big transitions at 16 to 18",
+        "Life transitions: starting college, university or work"
+      ]
+    },
+    {
+      "name": "Autumn Navigating Counselling article",
+      "when": "09-01",
+      "remind_days_before": 21,
+      "why": "The next article in the four-part seasonal series is due.",
+      "ideas": [
+        "Follow the 'To add the next article' steps in HANDOVER.md"
+      ]
+    },
+    {
+      "name": "World Suicide Prevention Day",
+      "when": "09-10",
+      "remind_days_before": 21,
+      "why": "Make sure the Crisis Support page is current before awareness days, when more people visit it.",
+      "tasks": [
+        "Check every number and opening time on the Crisis Support page is still correct"
+      ]
+    },
+    {
+      "name": "World Mental Health Day",
+      "when": "10-10",
+      "remind_days_before": 21,
+      "why": "A widely searched awareness day, and a good one to share an article on LinkedIn and Google Business Profile.",
+      "ideas": [
+        "Link to the latest Navigating Counselling article"
+      ]
+    },
+    {
+      "name": "Clocks go back",
+      "when": "last sunday of october",
+      "remind_days_before": 21,
+      "why": "Darker evenings affect mood, and they make getting about harder for people with sight loss.",
+      "ideas": [
+        "Darker evenings and sight loss: getting around and staying connected",
+        "Low mood in winter and when to seek support"
+      ]
+    },
+    {
+      "name": "Halloween",
+      "when": "10-31",
+      "remind_days_before": 28,
+      "why": "Masks, costumes, unexpected knocks at the door and crowds can be overwhelming, especially for autistic and neurodivergent people.",
+      "ideas": [
+        "Halloween and sensory overload: it's OK to opt out"
+      ]
+    },
+    {
+      "name": "Bonfire Night (and Diwali in some years)",
+      "when": "11-05",
+      "remind_days_before": 35,
+      "why": "Fireworks can trigger startle responses, hypervigilance and trauma memories, overwhelm the senses, and arrive with no warning for people with sight loss. This covers three of Fran's four specialisms and is widely searched.",
+      "ideas": [
+        "Fireworks, trauma and C-PTSD: why loud bangs can feel so big, and what can help",
+        "Fireworks and sensory overload for neurodivergent people",
+        "Fireworks when you can't see them coming (sight loss)"
+      ]
+    },
+    {
+      "name": "Remembrance Sunday",
+      "when": "second sunday of november",
+      "remind_days_before": 28,
+      "why": "A time of remembering that can bring up grief.",
+      "ideas": [
+        "Grief, remembering and anniversaries"
+      ]
+    },
+    {
+      "name": "Christmas closure dates",
+      "when": "11-16",
+      "remind_days_before": 21,
+      "why": "The Christmas notices on Contact, Services & Fees and Crisis Support switch on by themselves on their data-show-from date, but the dates in them are for one year only.",
+      "tasks": [
+        "Confirm this year's Christmas and New Year closure dates with Fran",
+        "Update the wording and the data-show-from / data-show-until dates on contact.html, services-and-fees.html and crisis-support.html",
+        "Update the Christmas line in llms.txt",
+        "Re-check the Crisis Support holiday note against each helpline's Christmas opening hours"
+      ]
+    },
+    {
+      "name": "International Day of Persons with Disabilities",
+      "when": "12-03",
+      "remind_days_before": 21,
+      "why": "Fits Fran's work with sight loss and chronic health conditions, and her own lived experience.",
+      "ideas": [
+        "Accessible counselling: what to ask a counsellor if you have sight loss or a long-term condition"
+      ]
+    },
+    {
+      "name": "Winter Navigating Counselling article",
+      "when": "12-01",
+      "remind_days_before": 21,
+      "why": "The next article in the four-part seasonal series is due, and it's a natural place to talk about the festive season.",
+      "ideas": [
+        "Follow the 'To add the next article' steps in HANDOVER.md"
+      ]
+    },
+    {
+      "name": "Christmas",
+      "when": "12-25",
+      "remind_days_before": 42,
+      "why": "Grief, loneliness, family conflict, money worries and exhaustion are all at their strongest over the festive season, and people search for help with them from November.",
+      "ideas": [
+        "Grief at Christmas",
+        "When Christmas is lonely",
+        "Pacing your energy through the festive season (chronic health conditions)",
+        "Masking at family gatherings (neurodiversity)",
+        "Difficult family time and trauma"
+      ]
+    }
+  ]
+}

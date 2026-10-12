@@ -23,9 +23,16 @@ thank-you.html            Form submission landing page
 404.html                  Custom "page not found" page
 assets/
   site.css                All styling: tokens, type, layout, components
-  site.js                 Theme toggle + footer year
+  site.js                 Theme toggle, footer year, mobile menu, dated seasonal notices
   images/
 CNAME                     Custom domain config for GitHub Pages
+robots.txt, sitemap.xml   Search engine crawl rules and page list
+llms.txt                  Plain-text summary of the practice for AI tools
+CLAUDE.md                 Standing instructions for Claude Code sessions
+scripts/
+  check_site.py           Checks sitemap/llms.txt/structured data (--fix updates sitemap dates)
+  seasonal_reminders.py   Opens seasonal reminder issues from .github/seasonal-calendar.json
+.github/workflows/        Runs the two scripts above on GitHub
 ```
 
 Static HTML/CSS, no build step, no framework. Hosted on GitHub Pages.

@@ -124,7 +124,31 @@ here is the text." It should:
 
    The first article has only a "Next" link and the latest only a
    "Previous" one. Never link to an article that isn't published yet.
-5. Add the new page to `sitemap.xml` and `llms.txt`.
+5. Add the new page to `sitemap.xml` and `llms.txt`, and give it Article
+   structured data (details in `CLAUDE.md`, which Claude Code reads
+   automatically).
+
+## Things that happen automatically
+
+- **Seasonal reminders.** Every Monday, GitHub checks the calendar in
+  `.github/seasonal-calendar.json` and opens an "issue" (a to-do note on
+  the GitHub repository, under the **Issues** tab) for anything coming up:
+  Bonfire Night, Christmas, the next seasonal article, Mental Health
+  Awareness Week and so on. Each one has ideas for what to write and a
+  checklist. GitHub emails you about new issues if you're watching the
+  repository. You don't have to act on every one: close the issue if
+  you're skipping it this year. To work on one, tell Claude Code
+  something like: "Read CLAUDE.md, then help me with the Bonfire Night
+  seasonal reminder." To add or change dates, ask Claude Code to edit the
+  seasonal calendar.
+- **Christmas closure notices** on the Contact, Services & Fees and Crisis
+  Support pages switch themselves on from 16 November and off after 3
+  January. Each year a reminder asks you to confirm the new dates.
+- **Search engine housekeeping.** Whenever a change is pushed, GitHub runs
+  a check that the sitemap (the list of pages Google reads), `llms.txt`
+  (the summary AI tools like ChatGPT read) and articles are up to date. If
+  it finds a problem, you'll see a red cross next to the change on GitHub;
+  ask Claude Code to "fix the site check" and it will.
 
 ## Still outstanding
 
