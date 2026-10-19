@@ -11,7 +11,9 @@ still needs input from Simone or Fran.
 3. **Form boxes.** New `--field-border` colour on form fields only: at least
    3.55:1 against the form and the field in both themes (was 1.32:1 and
    1.47:1).
-4. **® changed to ©** in the footer on all 14 pages.
+4. **Footer now reads "© 2026 Navigating Seasons®"** on all 14 pages: © for the
+   site's copyright, ® after the name because it is a UK registered trademark
+   (IPO), confirmed by Simone.
 5. **Long dashes removed** from all page text:
    - The 39 page titles (tab, Google, social cards) now use "|".
    - The FormSubmit note under the contact form and the matching sentence in

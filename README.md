@@ -70,3 +70,7 @@ session for making content edits without touching code directly.
 
 Crisis contacts, accreditation numbers, fees, and privacy policy wording
 are factual content, not up for stylistic editing — verify before changing.
+
+"Navigating Seasons" is a UK registered trademark (IPO), so the footer reads
+"© year Navigating Seasons®": © for the site's copyright, ® for the name.
+Keep both.
