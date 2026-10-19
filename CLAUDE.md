@@ -77,3 +77,18 @@ ages 16+, UK-wide.
 
 Crisis helpline numbers and hours, BACP/accreditation details, fees and the
 cancellation policy, and the privacy policy wording (see `README.md`).
+
+<!-- antislop:start -->
+## antislop
+For UI, copy, people, mobile layout, or code comments work, read the core (`.claude/skills/antislop/SKILL.md`; the skills call it `antislop.md`) and then the skill for the task:
+- UI / visual: `.claude/skills/antislop-ui/SKILL.md`
+- Copy & text: `.claude/skills/antislop-copywriting/SKILL.md`
+- People: `.claude/skills/antislop-human/SKILL.md`
+- Mobile / responsive: `.claude/skills/antislop-layoutmobile/SKILL.md`
+- Code comments: `.claude/skills/antislop-code/SKILL.md`
+Before starting, follow the core's "Two Usage Modes" section in strict order: explicit session instruction first, then global preference, then ask. A session instruction always wins. For a resolved mode, say `antislop active: <mode> (session override).` or `antislop active: <mode> (global preference).` once before presenting findings or making edits, using the actual mode and source. Acknowledging the user's request without naming the source does not replace this notice.
+Only an explicit choice of antislop during or after selects a session mode. A request to review, audit, or avoid file edits does not select a mode; read the global preference in that case. Another skill's mode does not select antislop's mode.
+If the mode is unresolved, ask during/after and end the response; wait for the answer before any UI review, planning, or concept. For read-only tasks, put the active-mode notice only at the start of the final answer, never in progress messages. For editing tasks, announce before the first edit and omit it from the final answer.
+Fran's writing is used as she supplies it: antislop-copywriting checks text Claude drafts, and only suggests changes to Fran's text, never rewrites it unasked.
+Installed from github.com/miqdadbadjuber/anti-slop, release 3.2.21 (see `.claude/skills/antislop/VERSION`). To update, replace the six folders with ones from a newer release, all together.
+<!-- antislop:end -->

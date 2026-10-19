@@ -12,6 +12,9 @@
 	--ink: #211F1A;
 	--ink-soft: #5C5850;
 	--rule: rgba(33, 31, 26, 0.14);
+	/* Form field edges need 3:1 against the form and the field (WCAG 1.4.11);
+	   --rule is only ~1.3:1, too faint to find the boxes. */
+	--field-border: #857F73;
 	--sage: #6C7C59;
 	--accent: #6C7C59;
 	--accent-strong: #4A5A3B;
@@ -32,6 +35,7 @@ html[data-theme="dark"] {
 	--ink: #F0EDE6;
 	--ink-soft: #ABA89C;
 	--rule: rgba(240, 237, 230, 0.14);
+	--field-border: #767A6C;
 	--accent: #8FA377;
 	--accent-strong: #B4C79C;
 	--accent-contrast: #171D14;
@@ -82,6 +86,7 @@ img { max-width: 100%; display: block; }
 	font-family: var(--font-body);
 	font-size: 0.78rem;
 	letter-spacing: 0.12em;
+	text-transform: uppercase;
 	color: var(--accent-strong);
 	font-weight: 700;
 	margin-bottom: 0.9em;
@@ -145,6 +150,7 @@ main { display: block; }
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	min-height: 44px;
 	font-family: var(--font-display);
 	font-weight: 600;
 	font-size: 1.15rem;
@@ -154,17 +160,24 @@ main { display: block; }
 .brand:hover { color: var(--ink); }
 .brand svg { flex: none; }
 
+/* Wide screens: the brand on the first row and every link on one row below
+   it. The links don't fit beside the brand at this site's width, and letting
+   them wrap freely gave three ragged rows. Narrower than 1180px, the menu
+   button takes over (see the media query below). */
 .nav-links {
 	display: flex;
 	align-items: center;
-	gap: 22px;
+	gap: 18px;
 	flex-wrap: wrap;
+	flex-basis: 100%;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
 .nav-links a {
+	display: inline-block;
+	padding: 11px 0;
 	font-size: 0.92rem;
 	font-weight: 500;
 	color: var(--ink);
@@ -173,11 +186,14 @@ main { display: block; }
 .nav-links a:hover { color: var(--ink); text-decoration: underline; }
 .nav-links a[aria-current="page"] {
 	font-weight: 700;
-	border-bottom: 2px solid var(--accent);
-	padding-bottom: 3px;
+	text-decoration: underline;
+	text-decoration-color: var(--accent);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 6px;
 }
 
-.nav-links .btn { padding: 9px 18px; font-size: 0.88rem; }
+.nav-links .btn { display: inline-flex; padding: 0 18px; font-size: 0.88rem; }
+.nav-links li:nth-last-child(2) { margin-left: auto; }
 
 #theme-toggle {
 	display: inline-flex;
@@ -186,7 +202,8 @@ main { display: block; }
 	background: transparent;
 	border: 1px solid var(--rule);
 	border-radius: 999px;
-	padding: 8px 14px;
+	min-height: 44px;
+	padding: 0 14px;
 	font-family: var(--font-body);
 	font-size: 0.8rem;
 	font-weight: 500;
@@ -201,8 +218,8 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	display: none;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
+	width: 44px;
+	height: 44px;
 	background: transparent;
 	border: 1px solid var(--rule);
 	border-radius: 10px;
@@ -227,9 +244,10 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	border: 0;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1180px) {
 	.nav-toggle { display: inline-flex; }
 
+	.nav-links li:nth-last-child(2) { margin-left: 0; }
 	.nav-links {
 		display: none;
 		flex-direction: column;
@@ -243,14 +261,18 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	.nav-links.is-open { display: flex; }
 	.nav-links li { width: 100%; }
 	.nav-links a { display: block; padding: 10px 4px; }
-	.nav-links a[aria-current="page"] { border-bottom: none; border-left: 3px solid var(--accent); padding-left: 12px; }
+	.nav-links a[aria-current="page"] { text-decoration: none; border-left: 3px solid var(--accent); padding-left: 12px; }
 	.nav-links .btn, #theme-toggle { width: 100%; text-align: center; justify-content: center; }
 }
 
 /* ---- Buttons --------------------------------------------------------------- */
 
 .btn {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	text-align: center;
 	font-family: var(--font-body);
 	font-weight: 700;
 	font-size: 0.95rem;
@@ -281,6 +303,15 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	font-weight: 500;
 }
 .btn-quiet:hover { color: var(--ink) !important; border-color: var(--accent); }
+
+/* Invisible padding so the tap area is 44px tall without moving the
+   underline. Also used for the footer credit link. */
+.btn-quiet, .site-credit a { position: relative; }
+.btn-quiet::before, .site-credit a::before {
+	content: "";
+	position: absolute;
+	inset: -12px -4px;
+}
 
 /* ---- Hero ------------------------------------------------------------------ */
 
@@ -313,7 +344,6 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	position: relative;
 	width: 260px;
 	max-width: 100%;
-	filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.22));
 }
 
 .hero-ctas {
@@ -335,6 +365,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	font-weight: 600;
 	letter-spacing: 0.03em;
 	padding: 7px 13px;
+	border: 1px solid var(--rule);
 	border-radius: 999px;
 	background: var(--panel-tint);
 	color: var(--ink-soft);
@@ -349,7 +380,10 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	background: #63714F;
 	padding: 2.75rem 0;
 }
-.strip .kicker { color: #FFFFFF; }
+/* Stays white in dark mode too: the band is the same green in both themes,
+   and the dark-mode kicker green is only ~1.9:1 on it. */
+.strip .kicker,
+html[data-theme="dark"] .strip .kicker { color: #FFFFFF; }
 .tag-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .tag {
 	background: var(--bg);
@@ -383,7 +417,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	border-radius: var(--radius);
 	padding: 24px;
 	background: var(--panel-tint);
-	box-shadow: var(--shadow-soft);
+	border: 1px solid var(--rule);
 }
 
 .fee-figure {
@@ -397,7 +431,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	background: var(--panel-tint);
 	border-radius: 20px;
 	padding: clamp(24px, 4vw, 40px);
-	box-shadow: var(--shadow);
+	border: 1px solid var(--rule);
 	display: flex;
 	gap: 40px;
 	flex-wrap: wrap;
@@ -420,7 +454,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	border-radius: 14px;
 	padding: 14px 16px 14px 40px;
 	position: relative;
-	box-shadow: var(--shadow-soft);
+	border: 1px solid var(--rule);
 }
 .list-grid li::before {
 	content: "";
@@ -447,7 +481,7 @@ tbody tr:nth-child(even) { background: var(--panel-tint); }
 	border-radius: 14px;
 	padding: 18px 20px;
 	margin-bottom: 2rem;
-	box-shadow: var(--shadow-soft);
+	border: 1px solid var(--rule);
 }
 .crisis-banner strong { display: block; margin-bottom: 4px; color: var(--accent-strong); }
 html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
@@ -465,8 +499,9 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 	font-size: 0.95rem;
 	color: var(--ink);
 	background: var(--bg);
-	border: 1px solid var(--rule);
+	border: 1px solid var(--field-border);
 	border-radius: 10px;
+	min-height: 44px;
 	padding: 11px 13px;
 }
 .field textarea { min-height: 110px; resize: vertical; }
@@ -475,6 +510,8 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 .consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px; font-size: 0.88rem; color: var(--ink-soft); }
 .consent input { margin-top: 3px; }
 
+/* The one raised surface on the site: the shadow marks the form as the
+   place to act. Everything else sits flat with a hairline edge. */
 .contact-form {
 	background: var(--panel);
 	border-radius: 20px;
@@ -513,8 +550,8 @@ html[data-theme="dark"] .faq-group-title { color: var(--accent); }
 	font-size: 0.85rem;
 	color: var(--ink-soft);
 }
-.footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
-.footer-links a { color: var(--ink-soft); text-decoration: none; }
+.footer-links { display: flex; column-gap: 22px; flex-wrap: wrap; }
+.footer-links a { display: inline-block; padding: 12px 0; color: var(--ink-soft); text-decoration: none; }
 .footer-links a.crisis { color: var(--accent-strong); font-weight: 700; }
 html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
 .footer-links a:hover { color: var(--ink); }
@@ -523,7 +560,6 @@ html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
 	text-align: center;
 	font-size: 0.72rem;
 	color: var(--ink-soft);
-	opacity: 0.75;
 	margin-top: 16px;
 }
 .site-credit a { color: var(--ink-soft); }
