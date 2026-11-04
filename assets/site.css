@@ -50,6 +50,7 @@ html[data-theme="dark"] {
 
 html {
 	-webkit-text-size-adjust: 100%;
+	overflow-x: clip;
 }
 
 body {
@@ -59,6 +60,7 @@ body {
 	font-family: var(--font-body);
 	font-size: 16.5px;
 	line-height: 1.6;
+	overflow-x: clip;
 }
 
 h1, h2, h3 {
@@ -292,6 +294,8 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	background: var(--accent-strong) !important;
 	color: var(--accent-contrast) !important;
 }
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
 .btn-primary:hover { background: var(--ink) !important; color: var(--bg) !important; }
 
 .btn-quiet {
@@ -383,7 +387,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 /* Stays white in dark mode too: the band is the same green in both themes,
    and the dark-mode kicker green is only ~1.9:1 on it. */
 .strip .kicker,
-html[data-theme="dark"] .strip .kicker { color: #FFFFFF; }
+html[data-theme="dark"] .strip .kicker { color: #FDFBF6; }
 .tag-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .tag {
 	background: var(--bg);
@@ -424,6 +428,7 @@ html[data-theme="dark"] .strip .kicker { color: #FFFFFF; }
 	font-family: var(--font-display);
 	font-size: 2rem;
 	font-weight: 600;
+	font-variant-numeric: tabular-nums;
 	margin-bottom: 8px;
 }
 
