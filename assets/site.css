@@ -6,6 +6,12 @@
    ========================================================================== */
 
 :root {
+	--autumn: #A5461F; --autumn-line: #C2622D;
+	--winter: #2E5D8A; --winter-line: #4A7BAA;
+	--spring: #A3365F; --spring-line: #C4577E;
+	--summer: #7A5700; --summer-line: #A87C00;
+	--strip: #63714F;
+	--strip-ink: #FDFBF6;
 	--bg: #F7F4EC;
 	--panel: #FDFBF6;
 	--panel-tint: #FBF3E7;
@@ -29,6 +35,10 @@
 }
 
 html[data-theme="dark"] {
+	--autumn: #E3936A; --autumn-line: #D07A4C;
+	--winter: #94BCE3; --winter-line: #6F9DCB;
+	--spring: #EFA3BF; --spring-line: #D9809F;
+	--summer: #E9C55C; --summer-line: #CFA630;
 	--bg: #171D14;
 	--panel: #1E2618;
 	--panel-tint: #232C1C;
@@ -50,6 +60,7 @@ html[data-theme="dark"] {
 
 html {
 	-webkit-text-size-adjust: 100%;
+	overflow-x: clip;
 }
 
 body {
@@ -59,6 +70,7 @@ body {
 	font-family: var(--font-body);
 	font-size: 16.5px;
 	line-height: 1.6;
+	overflow-x: clip;
 }
 
 h1, h2, h3 {
@@ -84,9 +96,7 @@ img { max-width: 100%; display: block; }
 
 .kicker {
 	font-family: var(--font-body);
-	font-size: 0.78rem;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
+	font-size: 0.9rem;
 	color: var(--accent-strong);
 	font-weight: 700;
 	margin-bottom: 0.9em;
@@ -95,8 +105,9 @@ html[data-theme="dark"] .kicker { color: var(--accent); }
 
 .skip-link {
 	position: absolute;
-	left: -9999px;
+	left: 0;
 	top: 0;
+	transform: translateY(-120%);
 	z-index: 1000;
 	background: var(--ink);
 	color: var(--bg);
@@ -105,7 +116,7 @@ html[data-theme="dark"] .kicker { color: var(--accent); }
 	padding: 0.75rem 1.25rem;
 	border-radius: 0 0 6px 0;
 }
-.skip-link:focus { left: 0; }
+.skip-link:focus { transform: none; }
 
 a:focus-visible, button:focus-visible, input:focus-visible,
 textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
@@ -149,7 +160,7 @@ main { display: block; }
 .brand {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 8px;
 	min-height: 44px;
 	font-family: var(--font-display);
 	font-weight: 600;
@@ -167,7 +178,7 @@ main { display: block; }
 .nav-links {
 	display: flex;
 	align-items: center;
-	gap: 18px;
+	gap: 16px;
 	flex-wrap: wrap;
 	flex-basis: 100%;
 	list-style: none;
@@ -177,7 +188,7 @@ main { display: block; }
 
 .nav-links a {
 	display: inline-block;
-	padding: 11px 0;
+	padding: 12px 0;
 	font-size: 0.92rem;
 	font-weight: 500;
 	color: var(--ink);
@@ -192,18 +203,18 @@ main { display: block; }
 	text-underline-offset: 6px;
 }
 
-.nav-links .btn { display: inline-flex; padding: 0 18px; font-size: 0.88rem; }
+.nav-links .btn { display: inline-flex; padding: 0 16px; font-size: 0.88rem; }
 .nav-links li:nth-last-child(2) { margin-left: auto; }
 
 #theme-toggle {
 	display: inline-flex;
 	align-items: center;
-	gap: 7px;
+	gap: 8px;
 	background: transparent;
 	border: 1px solid var(--rule);
 	border-radius: 999px;
 	min-height: 44px;
-	padding: 0 14px;
+	padding: 0 16px;
 	font-family: var(--font-body);
 	font-size: 0.8rem;
 	font-weight: 500;
@@ -260,8 +271,8 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	}
 	.nav-links.is-open { display: flex; }
 	.nav-links li { width: 100%; }
-	.nav-links a { display: block; padding: 10px 4px; }
-	.nav-links a[aria-current="page"] { text-decoration: none; border-left: 3px solid var(--accent); padding-left: 12px; }
+	.nav-links a { display: block; padding: 12px 4px; }
+	.nav-links a[aria-current="page"] { text-decoration: none; background: var(--panel-tint); border-radius: 8px; padding-left: 12px; }
 	.nav-links .btn, #theme-toggle { width: 100%; text-align: center; justify-content: center; }
 }
 
@@ -277,7 +288,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	font-weight: 700;
 	font-size: 0.95rem;
 	text-decoration: none;
-	padding: 14px 26px;
+	padding: 12px 24px;
 	border-radius: 999px;
 	border: none;
 	cursor: pointer;
@@ -292,6 +303,8 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	background: var(--accent-strong) !important;
 	color: var(--accent-contrast) !important;
 }
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
 .btn-primary:hover { background: var(--ink) !important; color: var(--bg) !important; }
 
 .btn-quiet {
@@ -316,8 +329,8 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 /* ---- Hero ------------------------------------------------------------------ */
 
 .hero {
-	padding-top: 4.5rem;
-	padding-bottom: 3.5rem;
+	padding-top: 3rem;
+	padding-bottom: 2.5rem;
 	display: flex;
 	gap: 4rem;
 	align-items: center;
@@ -356,7 +369,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 
 .badges {
 	display: flex;
-	gap: 10px;
+	gap: 8px;
 	flex-wrap: wrap;
 }
 .badge {
@@ -364,7 +377,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	font-size: 0.75rem;
 	font-weight: 600;
 	letter-spacing: 0.03em;
-	padding: 7px 13px;
+	padding: 8px 12px;
 	border: 1px solid var(--rule);
 	border-radius: 999px;
 	background: var(--panel-tint);
@@ -377,20 +390,20 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	/* A touch deeper than --sage (#6C7C59) — the true brand swatch only
 	   gives the kicker label ~3.6:1 against white text, short of the 4.5:1
 	   small text needs. This still reads as the same sage. */
-	background: #63714F;
+	background: var(--strip);
 	padding: 2.75rem 0;
 }
 /* Stays white in dark mode too: the band is the same green in both themes,
    and the dark-mode kicker green is only ~1.9:1 on it. */
 .strip .kicker,
-html[data-theme="dark"] .strip .kicker { color: #FFFFFF; }
+html[data-theme="dark"] .strip .kicker { color: var(--strip-ink); }
 .tag-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .tag {
 	background: var(--bg);
 	color: var(--ink);
 	font-weight: 500;
 	font-size: 0.92rem;
-	padding: 11px 18px;
+	padding: 12px 16px;
 	border-radius: 10px;
 }
 
@@ -424,6 +437,7 @@ html[data-theme="dark"] .strip .kicker { color: #FFFFFF; }
 	font-family: var(--font-display);
 	font-size: 2rem;
 	font-weight: 600;
+	font-variant-numeric: tabular-nums;
 	margin-bottom: 8px;
 }
 
@@ -452,7 +466,7 @@ html[data-theme="dark"] .strip .kicker { color: #FFFFFF; }
 .list-grid li {
 	background: var(--panel-tint);
 	border-radius: 14px;
-	padding: 14px 16px 14px 40px;
+	padding: 16px 16px 16px 40px;
 	position: relative;
 	border: 1px solid var(--rule);
 }
@@ -479,7 +493,7 @@ tbody tr:nth-child(even) { background: var(--panel-tint); }
 .crisis-banner {
 	background: var(--panel-tint);
 	border-radius: 14px;
-	padding: 18px 20px;
+	padding: 16px 20px;
 	margin-bottom: 2rem;
 	border: 1px solid var(--rule);
 }
@@ -488,11 +502,11 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 
 /* ---- Forms ------------------------------------------------------------------- */
 
-.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
 
-.field { margin-bottom: 18px; }
-.field label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 7px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; }
 .field input, .field textarea, .field select {
 	width: 100%;
 	font-family: var(--font-body);
@@ -502,13 +516,13 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 	border: 1px solid var(--field-border);
 	border-radius: 10px;
 	min-height: 44px;
-	padding: 11px 13px;
+	padding: 12px 12px;
 }
 .field textarea { min-height: 110px; resize: vertical; }
 .field select { cursor: pointer; }
 
-.consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px; font-size: 0.88rem; color: var(--ink-soft); }
-.consent input { margin-top: 3px; }
+.consent { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 24px; font-size: 0.88rem; color: var(--ink-soft); }
+.consent input { margin-top: 4px; }
 
 /* The one raised surface on the site: the shadow marks the form as the
    place to act. Everything else sits flat with a hairline edge. */
@@ -519,8 +533,8 @@ html[data-theme="dark"] .crisis-banner strong { color: var(--accent); }
 	box-shadow: var(--shadow);
 }
 
-.contact-methods { display: flex; flex-direction: column; gap: 14px; margin: 1.5rem 0; font-size: 0.98rem; }
-.contact-methods a { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.contact-methods { display: flex; flex-direction: column; gap: 16px; margin: 1.5rem 0; font-size: 0.98rem; }
+.contact-methods a { display: flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; }
 .contact-methods a:hover { color: var(--ink); }
 .contact-methods svg { flex: none; }
 
@@ -550,8 +564,8 @@ html[data-theme="dark"] .faq-group-title { color: var(--accent); }
 	font-size: 0.85rem;
 	color: var(--ink-soft);
 }
-.footer-links { display: flex; column-gap: 22px; flex-wrap: wrap; }
-.footer-links a { display: inline-block; padding: 12px 0; color: var(--ink-soft); text-decoration: none; }
+.footer-links { display: flex; column-gap: 24px; flex-wrap: wrap; }
+.footer-links a { white-space: nowrap; display: inline-block; padding: 12px 0; color: var(--ink-soft); text-decoration: none; }
 .footer-links a.crisis { color: var(--accent-strong); font-weight: 700; }
 html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
 .footer-links a:hover { color: var(--ink); }
@@ -577,22 +591,14 @@ html[data-theme="dark"] .footer-links a.crisis { color: var(--accent); }
    Only colour accents change per season; the words (e.g. "Autumn 2026")
    always carry the meaning. */
 
-.season-autumn { --season: #A5461F; --season-line: #C2622D; }
-.season-winter { --season: #2E5D8A; --season-line: #4A7BAA; }
-.season-spring { --season: #A3365F; --season-line: #C4577E; }
-.season-summer { --season: #7A5700; --season-line: #A87C00; }
+.season-autumn { --season: var(--autumn); --season-line: var(--autumn-line); }
+.season-winter { --season: var(--winter); --season-line: var(--winter-line); }
+.season-spring { --season: var(--spring); --season-line: var(--spring-line); }
+.season-summer { --season: var(--summer); --season-line: var(--summer-line); }
 
-html[data-theme="dark"] .season-autumn { --season: #E3936A; --season-line: #D07A4C; }
-html[data-theme="dark"] .season-winter { --season: #94BCE3; --season-line: #6F9DCB; }
-html[data-theme="dark"] .season-spring { --season: #EFA3BF; --season-line: #D9809F; }
-html[data-theme="dark"] .season-summer { --season: #E9C55C; --season-line: #CFA630; }
 
-/* "Autumn 2026" is written in normal case in the HTML so screen readers
-   read words, not letters; it's shown in capitals here. */
 .season-label {
-	font-size: 0.78rem;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
+	font-size: 0.9rem;
 	font-weight: 700;
 	color: var(--season);
 	margin: 0 0 0.9em;
@@ -615,7 +621,7 @@ html[data-theme="dark"] .season-summer { --season: #E9C55C; --season-line: #CFA6
 .article-card {
 	position: relative;
 	height: 100%;
-	border-left: 4px solid var(--season-line);
+	border-top: 4px solid var(--season-line);
 }
 .article-card h3 { margin: 0; font-size: 1.25rem; }
 .article-card h3 a { color: var(--ink); text-decoration: none; }
@@ -638,13 +644,13 @@ html[data-theme="dark"] .season-summer { --season: #E9C55C; --season-line: #CFA6
 	padding: 0;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 6px;
+	gap: 8px;
 	font-size: 0.88rem;
 	color: var(--ink-soft);
 }
 .breadcrumb li + li::before {
 	content: "\203A";
-	margin-right: 6px;
+	margin-right: 8px;
 }
 
 .article {
@@ -705,4 +711,10 @@ html[data-theme="dark"] .season-summer { --season: #E9C55C; --season-line: #CFA6
 	margin-top: 1rem;
 	font-size: 0.85rem;
 	color: var(--ink-soft);
+}
+
+.heart { display: inline-block; vertical-align: -1px; }
+
+@media (max-width: 360px) {
+	.btn { font-size: 0.9rem; padding-left: 16px; padding-right: 16px; }
 }
