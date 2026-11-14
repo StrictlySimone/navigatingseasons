@@ -356,6 +356,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 .hero-portrait img {
 	position: relative;
 	width: 260px;
+	height: auto;
 	max-width: 100%;
 }
 
@@ -406,6 +407,8 @@ html[data-theme="dark"] .strip .kicker { color: var(--strip-ink); }
 	padding: 12px 16px;
 	border-radius: 10px;
 }
+a.tag { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+a.tag:hover { color: var(--ink); text-decoration-color: var(--accent-strong); }
 
 /* ---- Cards / grids ----------------------------------------------------------- */
 

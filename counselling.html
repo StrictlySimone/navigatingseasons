@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  (function () {
+    var t;
+    try {
+      t = localStorage.getItem('ns-theme');
+    } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-c6EGNTK9EILoYzuCnSYKF89/9BJynjMQ52F2sC6eqkw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Online Integrative Counselling UK | Complex Trauma &amp; Sight Loss</title>
+<meta name="description" content="Online and telephone integrative counselling across the UK for adults and young people aged 16+, with a BACP accredited counsellor. Specialising in complex trauma, sight loss and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Navigating Seasons">
+<meta property="og:title" content="Online Integrative Counselling UK | Complex Trauma &amp; Sight Loss">
+<meta property="og:description" content="Online and telephone integrative counselling across the UK for adults and young people aged 16+, with a BACP accredited counsellor. Specialising in complex trauma, sight loss and more.">
+<meta property="og:url" content="https://navigatingseasons.co.uk/counselling.html">
+<meta property="og:image" content="https://navigatingseasons.co.uk/assets/images/card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online Integrative Counselling UK | Complex Trauma &amp; Sight Loss">
+<meta name="twitter:description" content="Online and telephone integrative counselling across the UK for adults and young people aged 16+, with a BACP accredited counsellor. Specialising in complex trauma, sight loss and more.">
+<meta name="twitter:image" content="https://navigatingseasons.co.uk/assets/images/card.jpg">
+<meta id="theme-color-meta" name="theme-color" content="#171D14">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="canonical" href="https://navigatingseasons.co.uk/counselling.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Service",
+"name": "Online and telephone integrative counselling",
+"serviceType": "Counselling",
+"url": "https://navigatingseasons.co.uk/counselling.html",
+"description": "Online and telephone integrative counselling across the UK for adults and young people aged 16 and over, specialising in complex trauma and C-PTSD, sight loss, chronic health conditions and neurodiversity-affirming counselling.",
+"provider": { "@id": "https://navigatingseasons.co.uk/#localbusiness", "@type": "LocalBusiness", "name": "Navigating Seasons Counselling Services" },
+"areaServed": { "@type": "Country", "name": "United Kingdom" },
+"offers": [
+{ "@type": "Offer", "name": "Initial assessment consultation", "price": "40", "priceCurrency": "GBP" },
+{ "@type": "Offer", "name": "Individual counselling session (50 minutes)", "price": "50", "priceCurrency": "GBP" }
+],
+"audience": { "@type": "Audience", "audienceType": "Adults and young people aged 16 and over" }
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+	<div class="wrap">
+		<a href="index.html" class="brand" aria-label="Navigating Seasons compass logo, home page">
+			<svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+				<circle cx="17" cy="17" r="15" stroke="currentColor" stroke-width="1.4"/>
+				<path d="M17 6 L20 16 L17 14 L14 16 Z" style="fill: var(--accent);"/>
+				<path d="M17 28 L14 18 L17 20 L20 18 Z" fill="currentColor" opacity="0.55"/>
+				<circle cx="17" cy="17" r="2" fill="currentColor"/>
+			</svg>
+			Navigating Seasons
+		</a>
+		<button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+			<span class="sr-only">Menu</span>
+			<svg class="nav-toggle-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+			<svg class="nav-toggle-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+		</button>
+		<ul class="nav-links" id="nav-links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Me</a></li>
+			<li><a href="counselling.html" aria-current="page">Counselling</a></li>
+			<li><a href="how-i-work.html">How I Work</a></li>
+			<li><a href="services-and-fees.html">Services &amp; Fees</a></li>
+			<li><a href="clinical-supervision.html">Clinical Supervision</a></li>
+			<li><a href="qualifications.html">Qualifications</a></li>
+			<li><a href="articles.html">Articles</a></li>
+			<li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+			<li>
+				<button type="button" id="theme-toggle" aria-pressed="false">
+					<svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M3 12h2M19 12h2M4.6 19.4l1.4-1.4M18 6l1.4-1.4"/></svg>
+					<svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+					<span class="theme-toggle-label">Light</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<main id="main">
+	<section class="section">
+		<div class="wrap">
+			<h1>Online integrative counselling across the UK</h1>
+			<p style="max-width: 62ch; font-weight: 500;">Online and telephone counselling for adults and young people aged 16 and over.</p>
+			<p style="max-width: 62ch;">I’m Fran, a BACP accredited integrative counsellor and Accredited Sight Loss Counsellor. I offer online counselling in the UK by video call on Microsoft Teams or by phone, so you can have your sessions from home or another private space where you won’t be overheard.</p>
+			<p style="max-width: 62ch;">My work is trauma-informed. We go at a pace that feels manageable, and you have a say in how we work. I specialise in complex trauma counselling, sight loss, chronic health conditions and neurodiversity-affirming counselling, and I also work with many of the other reasons people come to counselling.</p>
+			<p style="max-width: 62ch;"><a href="contact.html" class="btn btn-primary">Book a free 25-minute initial conversation</a></p>
+
+			<h2 style="margin-top: 2.5rem;">Areas I specialise in</h2>
+			<div class="grid-2" style="margin: 0 0 1.5rem;">
+				<div class="card">
+					<h3>Complex trauma and C-PTSD</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">Counselling for the effects of difficult experiences that went on over time, in a trauma-informed way and at a pace that feels manageable.</p>
+					<p style="margin: 1rem 0 0;"><a href="how-i-can-help.html#complex-trauma" class="btn-quiet">About complex trauma counselling</a></p>
+				</div>
+				<div class="card">
+					<h3>Sight loss and visual impairment</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">I’m an Accredited Sight Loss Counsellor and I live with sight loss myself. We can talk about adjustment, loss, identity and independence.</p>
+					<p style="margin: 1rem 0 0;"><a href="how-i-can-help.html#sight-loss" class="btn-quiet">About sight loss counselling</a></p>
+				</div>
+				<div class="card">
+					<h3>Chronic health conditions</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">Support with the emotional side of a long-term health condition, from adjusting to a diagnosis to coping with changing symptoms and energy.</p>
+					<p style="margin: 1rem 0 0;"><a href="how-i-can-help.html#chronic-health" class="btn-quiet">About counselling for chronic health conditions</a></p>
+				</div>
+				<div class="card">
+					<h3>Neurodiversity-affirming counselling</h3>
+					<p style="margin-bottom: 0; color: var(--ink-soft);">For autistic people, people with ADHD and other neurodivergent people. The aim isn’t to make you less neurodivergent.</p>
+					<p style="margin: 1rem 0 0;"><a href="how-i-can-help.html#neurodiversity" class="btn-quiet">About neurodiversity-affirming counselling</a></p>
+				</div>
+			</div>
+			<p style="max-width: 62ch;">You don’t need to fit one of these areas to work with me. I also offer counselling for anxiety, stress, low mood and depression, grief and loss, identity, relationships and life transitions. <a href="how-i-can-help.html">See everything I can help with</a>.</p>
+
+			<h2 style="margin-top: 2.5rem;">What integrative counselling means</h2>
+			<p style="max-width: 62ch;">Rather than using one model for everyone, I draw on several approaches and fit them to you. These include Person-Centred and Psychodynamic ideas, CBT, Transactional Analysis, Gestalt and IFS-informed parts work. You don’t need to know anything about them before we start. <a href="how-i-work.html">How I work as an integrative, trauma-informed counsellor</a> explains each in plain language.</p>
+
+			<h2 style="margin-top: 2.5rem;">Getting started</h2>
+			<ul style="margin: 0 0 1.1em 1.2em; padding: 0; color: var(--ink-soft); max-width: 62ch;">
+				<li>We begin with a free 25-minute initial conversation. You can ask questions and see whether working together feels right, with no obligation.</li>
+				<li>An initial assessment comes before your first counselling session, to explore what brings you to counselling.</li>
+				<li>Sessions last 50 minutes. I usually suggest starting with six sessions, then we review together whether to continue.</li>
+			</ul>
+			<p style="max-width: 62ch;">The initial assessment is &pound;40 and each 50-minute session is &pound;50. Availability, concessions and the cancellation policy are on the <a href="services-and-fees.html">counselling fees and availability</a> page.</p>
+			<p style="max-width: 62ch;">Counselling here is not an emergency or crisis service. If you need urgent help, please see <a href="crisis-support.html">crisis support</a>.</p>
+			<p style="max-width: 62ch;"><a href="contact.html" class="btn btn-primary">Enquire about counselling</a></p>
+			<p style="max-width: 62ch;">Counsellors can also find <a href="clinical-supervision.html">clinical supervision for counsellors</a>, which I offer as a separate service.</p>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<div class="wrap">
+		<div>&copy; <span class="current-year">2026</span> Navigating Seasons&reg; &middot; Frances Palmer-Thompson, Oldbury, West Midlands</div>
+		<div class="footer-links">
+			<a href="crisis-support.html" class="crisis">Crisis support</a>
+			<a href="privacy-policy.html">Privacy policy</a>
+			<a href="mailto:info@navigatingseasons.co.uk?subject=Enquiry%20from%20navigatingseasons.co.uk&amp;body=Please%20could%20you%20include%3A%0A-%20Your%20name%0A-%20A%20good%20time%20to%20reach%20you%0A-%20Whether%20your%20enquiry%20is%20about%20counselling%20or%20clinical%20supervision%0A-%20Briefly%2C%20what%20you%27d%20like%20to%20talk%20about%0A%0A">info@navigatingseasons.co.uk</a>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="site-credit">Site by <a href="https://flownarrate.com">FlowNarrate</a></div>
+	</div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
