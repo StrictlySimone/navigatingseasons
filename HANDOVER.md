@@ -20,7 +20,7 @@ Claude Code) can push changes directly — no need to go through Simone.
 
 ## What's on the site
 
-Eleven pages: Home, About Me, How I Can Help, How I Work, Services & Fees,
+Twelve pages: Home, About Me, Counselling, How I Can Help (the detailed areas of work, linked from Counselling), How I Work, Services & Fees,
 Clinical Supervision, Qualifications, Crisis Support, Privacy Policy, Contact (with a working
 enquiry form and FAQ), and a Thank You page after someone submits the form.
 There's also an Articles section (see below).
