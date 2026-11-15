@@ -1,0 +1,7 @@
+# GitHub Pages settings. Files listed here stay in the repo but are not published to the website.
+exclude:
+  - CLAUDE.md
+  - HANDOVER.md
+  - README.md
+  - skills-lock.json
+  - scripts

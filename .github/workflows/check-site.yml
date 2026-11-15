@@ -21,3 +21,4 @@ jobs:
         with:
           fetch-depth: 0 # full history, to know when each page last changed
       - run: python3 scripts/check_site.py
+      - run: python3 scripts/check_head.py
