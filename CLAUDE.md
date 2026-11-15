@@ -73,6 +73,18 @@ as supplied when she gives it. Keep the tone supportive rather than salesy,
 and stick to what she actually offers: online and telephone counselling,
 ages 16+, UK-wide.
 
+## SEO basics on every page
+
+`scripts/check_site.py` covers the sitemap, `llms.txt`, article structured data and seasonal dates. These page-level basics are not automated, so check them by eye whenever you add or edit a page:
+
+- **Domain:** every absolute URL (canonical, `og:url`, `og:image`, JSON-LD, sitemap, `robots.txt`, `llms.txt`) uses `https://navigatingseasons.co.uk`, matching `CNAME`. Do not switch to `www`.
+- **`<head>`:** a unique `<title>` and meta description, a canonical URL, `og:*` and `twitter:*` tags, and `<meta name="robots" content="index, follow">`. `404.html` and `thank-you.html` stay `noindex` and out of the sitemap.
+- **Content:** one `<h1>` per page, headings in order, descriptive `alt` text on content images (empty `alt` on decorative ones), and descriptive link text.
+- **JSON-LD** matches the visible page, with ISO 8601 dates.
+- **`robots.txt`** keeps pointing at `https://navigatingseasons.co.uk/sitemap.xml`.
+- **Repo-only files** (`CLAUDE.md`, `HANDOVER.md`, `README.md`, `scripts/`, `.github/`, skills folders) must not be published.
+- **Only say what is true today:** do not mention social accounts, services, availability or fees that Fran has not confirmed.
+
 ## Facts not to change without checking
 
 Crisis helpline numbers and hours, BACP/accreditation details, fees and the
