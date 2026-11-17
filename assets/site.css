@@ -339,6 +339,15 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 .hero-copy { flex: 1 1 460px; }
 .hero .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 40em; }
 
+.hero-supervision {
+	border-left: 3px solid var(--accent);
+	padding-left: 1rem;
+	margin: 1.5rem 0;
+	max-width: 40em;
+}
+.hero-supervision h2 { font-size: 1.25rem; margin: 0 0 0.35rem; }
+.hero-supervision p { margin: 0 0 0.75rem; }
+
 .hero-portrait {
 	position: relative;
 	flex: 0 1 300px;
