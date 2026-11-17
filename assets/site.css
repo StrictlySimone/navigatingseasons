@@ -348,6 +348,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	max-width: 40em;
 }
 .hero-service-heading { font-size: 1.25rem; margin: 1.5rem 0 0.35rem; }
+.hero-quiet-link { margin: -0.25rem 0 0; }
 .hero-supervision p { margin: 0 0 0.75rem; }
 
 .hero-portrait {
