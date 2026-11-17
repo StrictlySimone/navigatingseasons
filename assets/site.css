@@ -102,6 +102,8 @@ img { max-width: 100%; display: block; }
 	margin-bottom: 0.9em;
 }
 html[data-theme="dark"] .kicker { color: var(--accent); }
+/* A kicker that is a real heading keeps the look of the plain kicker. */
+h2.kicker { line-height: inherit; text-wrap: wrap; }
 
 .skip-link {
 	position: absolute;
@@ -345,7 +347,7 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	margin: 1.5rem 0;
 	max-width: 40em;
 }
-.hero-supervision h2 { font-size: 1.25rem; margin: 0 0 0.35rem; }
+.hero-service-heading { font-size: 1.25rem; margin: 1.5rem 0 0.35rem; }
 .hero-supervision p { margin: 0 0 0.75rem; }
 
 .hero-portrait {
