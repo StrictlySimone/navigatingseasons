@@ -368,6 +368,18 @@ html[data-theme="light"] #theme-toggle .icon-moon { display: none; }
 	height: auto;
 	max-width: 100%;
 }
+/* When the portrait drops below the text (narrow screens), show a small one
+   above the heading instead, so the photo is not buried at the bottom. */
+@media (max-width: 899px) {
+	.hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+	.hero-portrait {
+		order: -1;
+		flex: 0 0 auto;
+		justify-content: flex-start;
+		padding: 0;
+	}
+	.hero-portrait img { width: 104px; }
+}
 
 .hero-ctas {
 	display: flex;
